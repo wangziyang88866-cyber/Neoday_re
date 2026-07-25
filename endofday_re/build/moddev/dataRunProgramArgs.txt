@@ -21,9 +21,9 @@ forgedatadev
 
 # User Supplied Program Arguments
 --mod
-endofdays_re
+Neoday_re
 --all
 --output
-"/Users/wangziyang/Downloads/endofday_re-main 2/endofday_re/src/generated/resources"
+/Users/wangziyang/Downloads/Neoday_re/endofday_re/src/generated/resources
 --existing
-"/Users/wangziyang/Downloads/endofday_re-main 2/endofday_re/src/main/resources"
+/Users/wangziyang/Downloads/Neoday_re/endofday_re/src/main/resources

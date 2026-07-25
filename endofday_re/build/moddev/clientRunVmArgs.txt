@@ -11,10 +11,10 @@ java.base/sun.security.util=cpw.mods.securejarhandler
 --add-exports
 jdk.naming.dns/com.sun.jndi.dns=java.naming
 -XstartOnFirstThread
-"-Dlog4j2.configurationFile=/Users/wangziyang/Downloads/endofday_re-main 2/endofday_re/build/moddev/clientLog4j2.xml"
+-Dlog4j2.configurationFile=/Users/wangziyang/Downloads/Neoday_re/endofday_re/build/moddev/clientLog4j2.xml
 -Djava.net.preferIPv6Addresses=system
 -DignoreList=mixinextras-neoforge-0.5.3.jar,client-extra,neoforge-
-"-DlegacyClassPath.file=/Users/wangziyang/Downloads/endofday_re-main 2/endofday_re/build/moddev/clientLegacyClasspath.txt"
+-DlegacyClassPath.file=/Users/wangziyang/Downloads/Neoday_re/endofday_re/build/moddev/clientLegacyClasspath.txt
 -Dneoforge.enableGameTest=true
--Dneoforge.enabledGameTestNamespaces=endofdays_re
+-Dneoforge.enabledGameTestNamespaces=Neoday_re
 -Dforge.logging.markers=REGISTRIES

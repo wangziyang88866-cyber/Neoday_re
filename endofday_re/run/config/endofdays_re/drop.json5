@@ -1,0 +1,438 @@
+{
+	// 生物掉落物配置
+	"data": {
+		"key_drop_1": {
+			// 实体列表
+			"entitys": [
+				"minecraft:zombie"
+			],
+			// 掉落物列表
+			"items": [
+				{
+					// id
+					"ItemId": "minecraft:air",
+					// weight
+					"weight": 550,
+					// min
+					"min": 1,
+					// max
+					"max": 2,
+					// chance
+					"chance": 0.25,
+					// 标签
+					"tag": "",
+					// Language 键映射
+					"Language": "占位"
+				},
+				{
+					// id
+					"ItemId": "minecraft:rotten_flesh",
+					// weight
+					"weight": 200,
+					// min
+					"min": 1,
+					// max
+					"max": 2,
+					// chance
+					"chance": 0.25,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "Rotten Flesh"
+				},
+				{
+					// id
+					"ItemId": "minecraft:iron_ingot",
+					// weight
+					"weight": 40,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.05,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "Iron Ingot"
+				},
+				{
+					// id
+					"ItemId": "minecraft:copper_ingot",
+					// weight
+					"weight": 50,
+					// min
+					"min": 1,
+					// max
+					"max": 2,
+					// chance
+					"chance": 0.08,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "Copper Ingot"
+				}
+			],
+			// 生效时间
+			"day": 0,
+			// 失效时间
+			"end": 100,
+			// Language 键映射
+			"Language": "Zombie"
+		}
+	},
+	// 尸体战利品表配置
+	"zombie_data": {
+		"key_drop_1": {
+			// 实体列表
+			"entitys": [
+				"minecraft:zombie"
+			],
+			// 掉落物列表
+			"items": [
+				{
+					// id
+					"ItemId": "minecraft:air",
+					// weight
+					"weight": 500,
+					// min
+					"min": 1,
+					// max
+					"max": 2,
+					// chance
+					"chance": 0.45,
+					// 标签
+					"tag": "",
+					// Language 键映射
+					"Language": "占位"
+				},
+				{
+					// id
+					"ItemId": "minecraft:rotten_flesh",
+					// weight
+					"weight": 200,
+					// min
+					"min": 1,
+					// max
+					"max": 2,
+					// chance
+					"chance": 0.45,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "Rotten Flesh"
+				},
+				{
+					// id
+					"ItemId": "minecraft:bone",
+					// weight
+					"weight": 150,
+					// min
+					"min": 1,
+					// max
+					"max": 2,
+					// chance
+					"chance": 0.45,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "Bone"
+				},
+				{
+					// id
+					"ItemId": "endofdays_re:bandage",
+					// weight
+					"weight": 50,
+					// min
+					"min": 1,
+					// max
+					"max": 3,
+					// chance
+					"chance": 0.15,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "item.endofdays_re.bandage"
+				},
+				{
+					// id
+					"ItemId": "endofdays_re:medical_bandage",
+					// weight
+					"weight": 15,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.05,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "item.endofdays_re.medical_bandage"
+				},
+				{
+					// id
+					"ItemId": "endofdays_re:standard_medkit",
+					// weight
+					"weight": 5,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.01,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "item.endofdays_re.standard_medkit"
+				},
+				{
+					// id
+					"ItemId": "endofdays_re:wooden_stick",
+					// weight
+					"weight": 40,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.08,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "item.endofdays_re.wooden_stick"
+				},
+				{
+					// id
+					"ItemId": "endofdays_re:crowbar",
+					// weight
+					"weight": 25,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.05,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "item.endofdays_re.crowbar"
+				},
+				{
+					// id
+					"ItemId": "endofdays_re:metal_bats",
+					// weight
+					"weight": 15,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.03,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "item.endofdays_re.metal_bats"
+				},
+				{
+					// id
+					"ItemId": "endofdays_re:machete",
+					// weight
+					"weight": 10,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.02,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "item.endofdays_re.machete"
+				},
+				{
+					// id
+					"ItemId": "endofdays_re:knife",
+					// weight
+					"weight": 8,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.015,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "item.endofdays_re.knife"
+				},
+				{
+					// id
+					"ItemId": "endofdays_re:fire_axe",
+					// weight
+					"weight": 5,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.01,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "item.endofdays_re.fire_axe"
+				},
+				{
+					// id
+					"ItemId": "minecraft:copper_ingot",
+					// weight
+					"weight": 120,
+					// min
+					"min": 1,
+					// max
+					"max": 4,
+					// chance
+					"chance": 0.2,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "Copper Ingot"
+				},
+				{
+					// id
+					"ItemId": "minecraft:iron_ingot",
+					// weight
+					"weight": 100,
+					// min
+					"min": 1,
+					// max
+					"max": 3,
+					// chance
+					"chance": 0.25,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "Iron Ingot"
+				},
+				{
+					// id
+					"ItemId": "minecraft:gold_ingot",
+					// weight
+					"weight": 80,
+					// min
+					"min": 1,
+					// max
+					"max": 2,
+					// chance
+					"chance": 0.15,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "Gold Ingot"
+				},
+				{
+					// id
+					"ItemId": "minecraft:diamond",
+					// weight
+					"weight": 30,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.05,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "Diamond"
+				},
+				{
+					// id
+					"ItemId": "minecraft:netherite_scrap",
+					// weight
+					"weight": 10,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.02,
+					// 标签
+					"tag": "{}",
+					// Language 键映射
+					"Language": "Netherite Scrap"
+				},
+				{
+					// id
+					"ItemId": "minecraft:diamond_chestplate",
+					// weight
+					"weight": 2,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.005,
+					// 标签
+					"tag": "{Enchantments:[{id:\"minecraft:protection\",lvl:4},{id:\"minecraft:unbreaking\",lvl:3}]}",
+					// Language 键映射
+					"Language": "Diamond Chestplate"
+				},
+				{
+					// id
+					"ItemId": "minecraft:diamond_leggings",
+					// weight
+					"weight": 2,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.005,
+					// 标签
+					"tag": "{Enchantments:[{id:\"minecraft:protection\",lvl:4}]}",
+					// Language 键映射
+					"Language": "Diamond Leggings"
+				},
+				{
+					// id
+					"ItemId": "minecraft:diamond_boots",
+					// weight
+					"weight": 2,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.005,
+					// 标签
+					"tag": "{Enchantments:[{id:\"minecraft:protection\",lvl:4},{id:\"minecraft:feather_falling\",lvl:4}]}",
+					// Language 键映射
+					"Language": "Diamond Boots"
+				},
+				{
+					// id
+					"ItemId": "minecraft:diamond_helmet",
+					// weight
+					"weight": 2,
+					// min
+					"min": 1,
+					// max
+					"max": 1,
+					// chance
+					"chance": 0.005,
+					// 标签
+					"tag": "{Enchantments:[{id:\"minecraft:protection\",lvl:4},{id:\"minecraft:respiration\",lvl:3}]}",
+					// Language 键映射
+					"Language": "Diamond Helmet"
+				}
+			],
+			// 生效时间
+			"day": 0,
+			// 失效时间
+			"end": 100,
+			// Language 键映射
+			"Language": "Zombie"
+		}
+	}
+}

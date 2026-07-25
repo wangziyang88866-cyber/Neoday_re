@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "endofdays_re:be_zombie_placed",
+  "step": "top_layer_modification"
+}

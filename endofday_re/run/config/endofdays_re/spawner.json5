@@ -1,0 +1,218 @@
+{
+	// 启用自定义刷怪系统
+	"enable": true,
+	// 维度白名单（留空表示所有维度）
+	"allowed_dimensions": [
+		"minecraft:overworld"
+	],
+	// 全局最大僵尸数量（-1表示不限制）
+	"max_total_entities": 150,
+	// 阶段配置列表（按天数自动切换）
+	"stage_configs": {
+		"stage_5": {
+			// 阶段开始天数
+			"start_day": 81,
+			// 阶段结束天数（-1表示无限）
+			"end_day": 100,
+			// 阶段描述
+			"description": "第五阶段：末日降临",
+			// 最大刷怪组数
+			"max_groups": 6,
+			// 每组最大实体数
+			"max_per_group": 7,
+			// 刷怪检查间隔（tick），20 tick = 1秒
+			"check_interval": 100,
+			// 水平刷怪范围最小值（格）
+			"spawn_range_min": 32,
+			// 水平刷怪范围最大值（格）
+			"spawn_range_max": 120,
+			// 垂直刷怪范围最小值（Y轴）
+			"vertical_range_min": 32,
+			// 垂直刷怪范围最大值（Y轴）
+			"vertical_range_max": 64,
+			// 是否只在晚上刷怪
+			"only_spawn_at_night": false,
+			// 是否检查光照等级（开启后有火把的地方不刷怪）
+			"check_light_level": false,
+			// 阶段专属实体配置
+			"entity_configs": {
+				"zombie": {
+					// 实体ID
+					"entity_id": "minecraft:zombie",
+					// 生成权重
+					"weight": 100,
+					// NBT标签
+					"nbt_tag": "{IsBaby:0b}",
+					// 属性配置
+					"attributes": [],
+					// 装备配置
+					"equipments": []
+				}
+			}
+		},
+		"stage_3": {
+			// 阶段开始天数
+			"start_day": 41,
+			// 阶段结束天数（-1表示无限）
+			"end_day": 60,
+			// 阶段描述
+			"description": "第三阶段：中等难度",
+			// 最大刷怪组数
+			"max_groups": 4,
+			// 每组最大实体数
+			"max_per_group": 5,
+			// 刷怪检查间隔（tick），20 tick = 1秒
+			"check_interval": 280,
+			// 水平刷怪范围最小值（格）
+			"spawn_range_min": 32,
+			// 水平刷怪范围最大值（格）
+			"spawn_range_max": 120,
+			// 垂直刷怪范围最小值（Y轴）
+			"vertical_range_min": 32,
+			// 垂直刷怪范围最大值（Y轴）
+			"vertical_range_max": 64,
+			// 是否只在晚上刷怪
+			"only_spawn_at_night": true,
+			// 是否检查光照等级（开启后有火把的地方不刷怪）
+			"check_light_level": true,
+			// 阶段专属实体配置
+			"entity_configs": {
+				"zombie": {
+					// 实体ID
+					"entity_id": "minecraft:zombie",
+					// 生成权重
+					"weight": 100,
+					// NBT标签
+					"nbt_tag": "{IsBaby:0b}",
+					// 属性配置
+					"attributes": [],
+					// 装备配置
+					"equipments": []
+				}
+			}
+		},
+		"stage_4": {
+			// 阶段开始天数
+			"start_day": 61,
+			// 阶段结束天数（-1表示无限）
+			"end_day": 80,
+			// 阶段描述
+			"description": "第四阶段：高度危险",
+			// 最大刷怪组数
+			"max_groups": 5,
+			// 每组最大实体数
+			"max_per_group": 6,
+			// 刷怪检查间隔（tick），20 tick = 1秒
+			"check_interval": 200,
+			// 水平刷怪范围最小值（格）
+			"spawn_range_min": 32,
+			// 水平刷怪范围最大值（格）
+			"spawn_range_max": 120,
+			// 垂直刷怪范围最小值（Y轴）
+			"vertical_range_min": 32,
+			// 垂直刷怪范围最大值（Y轴）
+			"vertical_range_max": 64,
+			// 是否只在晚上刷怪
+			"only_spawn_at_night": false,
+			// 是否检查光照等级（开启后有火把的地方不刷怪）
+			"check_light_level": false,
+			// 阶段专属实体配置
+			"entity_configs": {
+				"zombie": {
+					// 实体ID
+					"entity_id": "minecraft:zombie",
+					// 生成权重
+					"weight": 100,
+					// NBT标签
+					"nbt_tag": "{IsBaby:0b}",
+					// 属性配置
+					"attributes": [],
+					// 装备配置
+					"equipments": []
+				}
+			}
+		},
+		"stage_1": {
+			// 阶段开始天数
+			"start_day": 0,
+			// 阶段结束天数（-1表示无限）
+			"end_day": 20,
+			// 阶段描述
+			"description": "第一阶段：初期威胁",
+			// 最大刷怪组数
+			"max_groups": 2,
+			// 每组最大实体数
+			"max_per_group": 3,
+			// 刷怪检查间隔（tick），20 tick = 1秒
+			"check_interval": 400,
+			// 水平刷怪范围最小值（格）
+			"spawn_range_min": 32,
+			// 水平刷怪范围最大值（格）
+			"spawn_range_max": 120,
+			// 垂直刷怪范围最小值（Y轴）
+			"vertical_range_min": 32,
+			// 垂直刷怪范围最大值（Y轴）
+			"vertical_range_max": 64,
+			// 是否只在晚上刷怪
+			"only_spawn_at_night": true,
+			// 是否检查光照等级（开启后有火把的地方不刷怪）
+			"check_light_level": true,
+			// 阶段专属实体配置
+			"entity_configs": {
+				"zombie": {
+					// 实体ID
+					"entity_id": "minecraft:zombie",
+					// 生成权重
+					"weight": 100,
+					// NBT标签
+					"nbt_tag": "{IsBaby:0b}",
+					// 属性配置
+					"attributes": [],
+					// 装备配置
+					"equipments": []
+				}
+			}
+		},
+		"stage_2": {
+			// 阶段开始天数
+			"start_day": 21,
+			// 阶段结束天数（-1表示无限）
+			"end_day": 40,
+			// 阶段描述
+			"description": "第二阶段：逐渐增强",
+			// 最大刷怪组数
+			"max_groups": 3,
+			// 每组最大实体数
+			"max_per_group": 4,
+			// 刷怪检查间隔（tick），20 tick = 1秒
+			"check_interval": 340,
+			// 水平刷怪范围最小值（格）
+			"spawn_range_min": 32,
+			// 水平刷怪范围最大值（格）
+			"spawn_range_max": 120,
+			// 垂直刷怪范围最小值（Y轴）
+			"vertical_range_min": 32,
+			// 垂直刷怪范围最大值（Y轴）
+			"vertical_range_max": 64,
+			// 是否只在晚上刷怪
+			"only_spawn_at_night": true,
+			// 是否检查光照等级（开启后有火把的地方不刷怪）
+			"check_light_level": true,
+			// 阶段专属实体配置
+			"entity_configs": {
+				"zombie": {
+					// 实体ID
+					"entity_id": "minecraft:zombie",
+					// 生成权重
+					"weight": 100,
+					// NBT标签
+					"nbt_tag": "{IsBaby:0b}",
+					// 属性配置
+					"attributes": [],
+					// 装备配置
+					"equipments": []
+				}
+			}
+		}
+	}
+}

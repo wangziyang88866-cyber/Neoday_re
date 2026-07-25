@@ -1,0 +1,305 @@
+{
+	// 游戏天数设置
+	"data": {
+		"place_block": {
+			// 生效时间
+			"day": 32,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.place_block",
+			// 默认值
+			"DefaultValue": 0
+		},
+		"spawn_tnt_zombie": {
+			// 生效时间
+			"day": 75,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.level.spawn_tnt_zombie",
+			// 默认值
+			"DefaultValue": 70
+		},
+		"shield": {
+			// 生效时间
+			"day": 50,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.use.shield",
+			// 默认值
+			"DefaultValue": 50
+		},
+		"spawn_tacz": {
+			// 生效时间
+			"day": 35,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.spawn.spawn_tacz",
+			// 默认值
+			"DefaultValue": 24
+		},
+		"enable_temp": {
+			// 生效时间
+			"day": 7,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.level.enable_temp",
+			// 默认值
+			"DefaultValue": 70
+		},
+		"replace": {
+			// 生效时间
+			"day": 19,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.replace",
+			// 默认值
+			"DefaultValue": 19
+		},
+		"entity_climb": {
+			// 生效时间
+			"day": 7,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.spawn.entity_climb",
+			// 默认值
+			"DefaultValue": 32
+		},
+		"gigantic": {
+			// 生效时间
+			"day": 7,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.spawn.spawn_gigantic",
+			// 默认值
+			"DefaultValue": 49
+		},
+		"bow": {
+			// 生效时间
+			"day": 20,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.use.bow",
+			// 默认值
+			"DefaultValue": 20
+		},
+		"break_block": {
+			// 生效时间
+			"day": 24,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.break_block",
+			// 默认值
+			"DefaultValue": 11
+		},
+		"ride": {
+			// 生效时间
+			"day": 35,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.use.ride",
+			// 默认值
+			"DefaultValue": 48
+		},
+		"dispenser": {
+			// 生效时间
+			"day": 35,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.use.dispenser",
+			// 默认值
+			"DefaultValue": 64
+		},
+		"place_tnt": {
+			// 生效时间
+			"day": 45,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.place_tnt",
+			// 默认值
+			"DefaultValue": 45
+		},
+		"enable": {
+			// 生效时间
+			"day": 0,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.game.enable",
+			// 默认值
+			"DefaultValue": 0
+		},
+		"fire": {
+			// 生效时间
+			"day": 45,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.immune.lava",
+			// 默认值
+			"DefaultValue": 45
+		},
+		"rebirth": {
+			// 生效时间
+			"day": 65,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.rebirth",
+			// 默认值
+			"DefaultValue": 65
+		},
+		"attribute": {
+			// 生效时间
+			"day": 4,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.attribute",
+			// 默认值
+			"DefaultValue": 4
+		},
+		"place_fluid": {
+			// 生效时间
+			"day": 60,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.use.place_fluid",
+			// 默认值
+			"DefaultValue": 60
+		},
+		"immune_sun": {
+			// 生效时间
+			"day": 5,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.immune.sun",
+			// 默认值
+			"DefaultValue": 7
+		},
+		"break_target_block": {
+			// 生效时间
+			"day": 7,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.use.break_target_block",
+			// 默认值
+			"DefaultValue": 19
+		},
+		"jump": {
+			// 生效时间
+			"day": 28,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.use.jump",
+			// 默认值
+			"DefaultValue": 28
+		},
+		"trident": {
+			// 生效时间
+			"day": 32,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.use.trident",
+			// 默认值
+			"DefaultValue": 32
+		},
+		"fishing": {
+			// 生效时间
+			"day": 57,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.use.fishing",
+			// 默认值
+			"DefaultValue": 57
+		},
+		"follow": {
+			// 生效时间
+			"day": 5,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.follow",
+			// 默认值
+			"DefaultValue": 5
+		},
+		"fly": {
+			// 生效时间
+			"day": 35,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.spawn.spawn_fly",
+			// 默认值
+			"DefaultValue": 49
+		},
+		"equip": {
+			// 生效时间
+			"day": 35,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.spawn.spawn_equip",
+			// 默认值
+			"DefaultValue": 16
+		},
+		"picked_target_container": {
+			// 生效时间
+			"day": 7,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.use.picked_target_container",
+			// 默认值
+			"DefaultValue": 30
+		},
+		"pearls": {
+			// 生效时间
+			"day": 35,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.use.pearls",
+			// 默认值
+			"DefaultValue": 69
+		},
+		"barker_vehicle": {
+			// 生效时间
+			"day": 35,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.bark.barker_vehicle",
+			// 默认值
+			"DefaultValue": 48
+		},
+		"potions": {
+			// 生效时间
+			"day": 35,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.use.potions",
+			// 默认值
+			"DefaultValue": 12
+		}
+	}
+}

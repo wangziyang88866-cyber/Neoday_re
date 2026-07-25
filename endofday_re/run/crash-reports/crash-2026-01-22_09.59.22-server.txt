@@ -1,0 +1,188 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 2026-01-22 09:59:22
+Description: Ticking entity
+
+java.lang.IllegalArgumentException: Can't find attribute minecraft:player.block_break_speed
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.attributes.AttributeSupplier.getAttributeInstance(AttributeSupplier.java:20) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.attributes.AttributeSupplier.getValue(AttributeSupplier.java:27) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.attributes.AttributeMap.getValue(AttributeMap.java:66) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.LivingEntity.getAttributeValue(LivingEntity.java:1996) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:tacz.mixins.json:common.LivingEntityMixin from mod tacz,pl:mixin:APP:endofday_re.mixins.json:LivingEntityMixin from mod endofday_re,pl:mixin:A}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.getDigSpeed(FollowBreakBlockBehavior.java:333) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.computeTickToBreak(FollowBreakBlockBehavior.java:307) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.initBlockBreak(FollowBreakBlockBehavior.java:262) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.lambda$start$2(FollowBreakBlockBehavior.java:194) ~[%23191!/:?] {re:classloading}
+	at java.base/java.util.Optional.ifPresent(Optional.java:178) ~[?:?] {re:mixin}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.start(FollowBreakBlockBehavior.java:194) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.start(FollowBreakBlockBehavior.java:38) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.behavior.Behavior.tryStart(Behavior.java:43) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.Brain.startEachNonRunningBehavior(Brain.java:445) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.Brain.tick(Brain.java:405) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Mob.handler$zzp000$endofday_re$onTick(Mob.java:2712) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Mob.tick(Mob.java) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.monster.Zombie.tick(Zombie.java:225) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B,xf:fml:default}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:777) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:endofday_re.mixins.json:ILevelMixin from mod endofday_re,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.Level.guardEntityTick(Level.java:602) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.lambda$tick$2(ServerLevel.java:423) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:endofday_re.mixins.json:ILevelMixin from mod endofday_re,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:403) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:endofday_re.mixins.json:ILevelMixin from mod endofday_re,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1046) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:926) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:113) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:710) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:267) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.attributes.AttributeSupplier.getAttributeInstance(AttributeSupplier.java:20) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.attributes.AttributeSupplier.getValue(AttributeSupplier.java:27) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.attributes.AttributeMap.getValue(AttributeMap.java:66) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.LivingEntity.getAttributeValue(LivingEntity.java:1996) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:tacz.mixins.json:common.LivingEntityMixin from mod tacz,pl:mixin:APP:endofday_re.mixins.json:LivingEntityMixin from mod endofday_re,pl:mixin:A}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.getDigSpeed(FollowBreakBlockBehavior.java:333) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.computeTickToBreak(FollowBreakBlockBehavior.java:307) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.initBlockBreak(FollowBreakBlockBehavior.java:262) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.lambda$start$2(FollowBreakBlockBehavior.java:194) ~[%23191!/:?] {re:classloading}
+	at java.base/java.util.Optional.ifPresent(Optional.java:178) ~[?:?] {re:mixin}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.start(FollowBreakBlockBehavior.java:194) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.goal.brains.FollowBreakBlockBehavior.start(FollowBreakBlockBehavior.java:38) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.behavior.Behavior.tryStart(Behavior.java:43) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.Brain.startEachNonRunningBehavior(Brain.java:445) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.Brain.tick(Brain.java:405) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Mob.handler$zzp000$endofday_re$onTick(Mob.java:2712) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Mob.tick(Mob.java) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.monster.Zombie.tick(Zombie.java:225) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B,xf:fml:default}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:777) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:endofday_re.mixins.json:ILevelMixin from mod endofday_re,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.Level.guardEntityTick(Level.java:602) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.lambda$tick$2(ServerLevel.java:423) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:endofday_re.mixins.json:ILevelMixin from mod endofday_re,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:zombie (net.minecraft.world.entity.monster.Zombie)
+	Entity ID: 2096
+	Entity Name: 僵尸
+	Entity's Exact location: 239.50, -60.00, 321.06
+	Entity's Block location: World: (239,-60,321), Section: (at 15,4,1 in 14,-4,20; chunk contains blocks 224,-64,320 to 239,319,335), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Entity's Momentum: 0.00, -0.08, 0.18
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.Level.guardEntityTick(Level.java:602) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.lambda$tick$2(ServerLevel.java:423) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:endofday_re.mixins.json:ILevelMixin from mod endofday_re,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:403) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:endofday_re.mixins.json:ILevelMixin from mod endofday_re,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1046) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:926) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:113) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:710) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:267) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayer['Dev'/7, l='ServerLevel[新的世界]', x=243.82, y=-51.84, z=173.33]]
+	Chunk stats: 2717
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,-60,0), Section: (at 0,4,0 in 0,-4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 33090 game time, 1953090 day time
+	Level name: 新的世界
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Commands: true
+	Level weather: Rain time: 113653 (now: false), thunder time: 139765 (now: false)
+	Known server brands: neoforge
+	Removed feature flags: 
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+	Loaded entity count: 298
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.fillReportDetails(ServerLevel.java:1742) ~[neoforge-21.1.218.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:endofday_re.mixins.json:ILevelMixin from mod endofday_re,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1049) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:926) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:113) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:710) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:267) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 21.0.9, Azul Systems, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Azul Systems, Inc.
+	Memory: 222486920 bytes (212 MiB) / 1889533952 bytes (1802 MiB) up to 4257218560 bytes (4060 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz
+	Identifier: Intel64 Family 6 Model 158 Stepping 10
+	Microarchitecture: Coffee Lake
+	Frequency (GHz): 2.40
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: NVIDIA GeForce GTX 1650
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 4096.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.5612
+	Graphics card #1 name: Intel(R) UHD Graphics 630
+	Graphics card #1 vendor: Intel Corporation
+	Graphics card #1 VRAM (MiB): 1024.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 31.0.101.2127
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.67
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 43883.96
+	Virtual memory used (MiB): 16766.49
+	Swap memory total (MiB): 27648.00
+	Swap memory used (MiB): 14.07
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 90520.13, total: 336758.31
+	Space in storage for workdir (MiB): available: 60323.60, total: 149999.00
+	JVM Flags: 0 total; 
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/7, l='ServerLevel[新的世界]', x=243.82, y=-51.84, z=173.33]]
+	Active Data Packs: tacz_resources, vanilla, mod_data, mod/tacz, mod/cloth_config (incompatible), mod/neoforge, mod/endofday_re
+	Available Data Packs: bundle, trade_rebalance, vanilla, mod/cloth_config (incompatible), mod/endofday_re, mod/neoforge, mod/tacz, mod_data, tacz_resources
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	World Seed: -7478732074162717316
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'neoforge'; Server brand changed to 'neoforge'
+	Launched Version: 21.1.218
+	ModLauncher: 11.0.5+main.901c6ea8
+	ModLauncher launch target: forgeclientdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-4.0.42.jar slf4jfixer PLUGINSERVICE 
+		loader-4.0.42.jar runtime_enum_extender PLUGINSERVICE 
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE 
+		loader-4.0.42.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-11.0.5.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-11.0.5.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List: 
+		cloth-config-348521-5729127.jar                   |Cloth Config v15 API          |cloth_config                  |15.0.140            |Manifest: NOSIGNATURE
+		main                                              |endofday_re                   |endofday_re                   |1.0-SNAPSHOT        |Manifest: NOSIGNATURE
+		neoforge-21.1.218.jar                             |Minecraft                     |minecraft                     |1.21.1              |Manifest: NOSIGNATURE
+		neoforge-21.1.218.jar                             |NeoForge                      |neoforge                      |21.1.218            |Manifest: NOSIGNATURE
+		tacz-1-21-1-1353462-7374584.jar                   |Timeless & Classics Guns: Zero|tacz                          |1.1.7-r2            |Manifest: NOSIGNATURE
+	Crash Report UUID: 42306655-edea-4699-b178-3c6a6c084a04
+	FML: 4.0.42
+	NeoForge: 21.1.218

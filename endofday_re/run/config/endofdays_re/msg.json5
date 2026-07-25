@@ -1,0 +1,95 @@
+{
+	// 消息
+	"data": {
+		"neight_msg": {
+			// 启用时间
+			"day": 0,
+			// 结束时间
+			"endDay": 100,
+			// Language 键映射 MSG
+			"msg": "endofdays_re.event.neight.msg",
+			// Language 键映射
+			"lang": "",
+			// 方法类型
+			"eventMode": "TIME",
+			// 触发刻度
+			"time": "NIGHT",
+			// 前置要求
+			"pre": [],
+			// 权重
+			"weight": 100
+		},
+		"moon_msg": {
+			// 启用时间
+			"day": 0,
+			// 结束时间
+			"endDay": 100,
+			// Language 键映射 MSG
+			"msg": "endofdays_re.event.moon.msg",
+			// Language 键映射
+			"lang": "",
+			// 方法类型
+			"eventMode": "BLOOD",
+			// 触发刻度
+			"time": "NIGHT",
+			// 前置要求
+			"pre": [],
+			// 权重
+			"weight": 100
+		},
+		"blood_sleep": {
+			// 启用时间
+			"day": -1,
+			// 结束时间
+			"endDay": -1,
+			// Language 键映射 MSG
+			"msg": "endofdays_re.blood.sleep",
+			// Language 键映射
+			"lang": "",
+			// 方法类型
+			"eventMode": "NONE",
+			// 触发刻度
+			"time": "NONE",
+			// 前置要求
+			"pre": [],
+			// 权重
+			"weight": 100
+		},
+		"day_msg": {
+			// 启用时间
+			"day": 0,
+			// 结束时间
+			"endDay": 100,
+			// Language 键映射 MSG
+			"msg": "endofdays_re.event.day.msg",
+			// Language 键映射
+			"lang": "",
+			// 方法类型
+			"eventMode": "TIME",
+			// 触发刻度
+			"time": "DAY",
+			// 前置要求
+			"pre": [],
+			// 权重
+			"weight": 100
+		},
+		"moon_msg_end": {
+			// 启用时间
+			"day": 0,
+			// 结束时间
+			"endDay": 100,
+			// Language 键映射 MSG
+			"msg": "endofdays_re.event.moon.msg.1",
+			// Language 键映射
+			"lang": "",
+			// 方法类型
+			"eventMode": "BLOOD",
+			// 触发刻度
+			"time": "DAY",
+			// 前置要求
+			"pre": [],
+			// 权重
+			"weight": 100
+		}
+	}
+}

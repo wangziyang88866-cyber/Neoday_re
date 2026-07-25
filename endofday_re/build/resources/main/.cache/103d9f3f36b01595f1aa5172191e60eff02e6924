@@ -1,0 +1,4 @@
+// 1.21.1	2026-03-29T02:08:11.4735027	Registries
+4cbb4de3dce797cacabf63710e0696a8d1f4231f data/endofdays_re/neoforge/biome_modifier/add_be_zombie.json
+1072cb84bd5c642f48b866cc59c5f1025b4e85b2 data/endofdays_re/worldgen/configured_feature/be_zombie.json
+21f9a61f7403e25badc5010705e169051554cacc data/endofdays_re/worldgen/placed_feature/be_zombie_placed.json

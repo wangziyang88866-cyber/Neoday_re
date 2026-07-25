@@ -1,0 +1,131 @@
+{
+	// 入侵可能性冷却间隔/24000为1天
+	"max_time": 24000,
+	// 入侵配置列表
+	"invasionSettings": {
+		"zombie_horde": {
+			// 标识ID
+			"key": "zombie_horde",
+			// 权重
+			"weight": 100,
+			// 发动入侵尝试波次
+			"InvasionCount": {
+				// 最小允许
+				"min": 3,
+				// 最大允许
+				"max": 9
+			},
+			// 成功概率
+			"probability": 0.6000000238418579,
+			// 触发时间段
+			"time_range": {
+				// 最小允许
+				"min": 13000,
+				// 最大允许
+				"max": 21000
+			},
+			// 触发允许世界
+			"dim": [
+				"minecraft:overworld"
+			],
+			// 实体配置
+			"entitySetting": [
+				{
+					// 实体id
+					"id": "minecraft:zombie",
+					// 尝试生成次数
+					"max_count": {
+						// 最小允许
+						"min": 5,
+						// 最大允许
+						"max": 12
+					},
+					// 实体标签
+					"tag": "{IsInvasion:1b}",
+					// 实体效果配置
+					"effectSetting": [
+						{
+							// 效果id
+							"ef_id": "minecraft:speed",
+							// 允许等级
+							"level": {
+								// 最小允许
+								"min": 0,
+								// 最大允许
+								"max": 1
+							},
+							// 持续时间
+							"leftTime": {
+								// 最小允许
+								"min": 600,
+								// 最大允许
+								"max": 2400
+							},
+							// 效果粒子显示
+							"show_ef": false,
+							// 添加概率
+							"probability": 0.30000001192092896
+						}
+					],
+					// 实护甲配置
+					"arrmorSetting": [
+						{
+							// 物品ID
+							"arrmor_id": "minecraft:leather_chestplate",
+							// 插槽id
+							"slot": "chest",
+							// 标签
+							"tag": "{display:{color:16711680}}",
+							// 耐久程度
+							"durability": 80,
+							// 掉落
+							"on_drop": false,
+							// 穿戴概率
+							"probability": 0.5
+						},
+						{
+							// 物品ID
+							"arrmor_id": "minecraft:iron_sword",
+							// 插槽id
+							"slot": "mainhand",
+							// 标签
+							"tag": "",
+							// 耐久程度
+							"durability": 250,
+							// 掉落
+							"on_drop": true,
+							// 穿戴概率
+							"probability": 0.20000000298023224
+						}
+					],
+					// 实体属性设置
+					"attributeSetting": [
+						{
+							// 属性ID
+							"id": "generic.max_health",
+							// EVL计算公式
+							"evl": "30"
+						}
+					],
+					// 成功生成概率
+					"probability": 1.0
+				}
+			],
+			// 当前标识ID的入侵配置允许的最大实体上限
+			"maxEntity": 30,
+			// 玩家附近最大选点数量
+			"pos_max": 12,
+			// 距离玩家的范围
+			"pos_range": {
+				// 最小允许
+				"min": 15,
+				// 最大允许
+				"max": 45
+			},
+			// 生效日
+			"day_": 0,
+			// 失效日
+			"end_day": 100
+		}
+	}
+}

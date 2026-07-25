@@ -1,0 +1,109 @@
+{
+	// 显示HUD信息
+	"showHud": true,
+	// 显示加入信息
+	"isShowJoin": true,
+	// 显示屏幕标题
+	"isTitleShow": true,
+	// Title淡入Time-越大淡入越慢
+	"joinTime": 100,
+	// Title显示Time-显示停留时间
+	"ShowTime": 300,
+	// Title淡出Time-越大淡出越慢
+	"OutTime": 100,
+	// Title显示夜晚标题
+	"TitleNightShow": false,
+	// 显示药水粒子效果
+	"showParticles": false,
+	// 显示伤害粒子
+	"showDamage": true,
+	// 显示治疗粒子
+	"showHeal": true,
+	// 详细的治疗粒子样式配置
+	"healStyle": {
+		// 治疗主颜色 (十六进制)
+		"mainColor": "#55FF55",
+		// 治疗前缀 (如 +)
+		"prefix": "+",
+		// 前缀颜色
+		"prefixColor": "#00AA00",
+		// 玩家专属后缀 (如 HP)
+		"playerSuffix": " HP",
+		// 是否开启加粗显示
+		"enableBold": true
+	},
+	// 详细的伤害粒子样式配置
+	"damageStyle": {
+		// 是否开启加粗显示 (影响魔法、凋零等)
+		"enableBold": true,
+		// 显示暴击提示
+		"showCrit": true,
+		// 暴击时的数字颜色
+		"critColor": "#FFCC00",
+		// 暴击前缀
+		"critPrefix": "💥 CRIT",
+		// 暴击后缀
+		"critSuffix": "!!",
+		// 显示伤害来源前缀 (P/M)
+		"showSourcePrefix": true,
+		// 玩家伤害前缀
+		"playerPrefix": "P",
+		// 生物伤害前缀
+		"mobPrefix": "M",
+		// 显示火焰伤害
+		"showFire": true,
+		"fireColor": "#FFAC33",
+		"fireSuffix": "🔥",
+		// 显示魔法伤害
+		"showMagic": true,
+		"magicColor": "#55FFFF",
+		"magicSuffix": "✨",
+		// 显示闪电伤害
+		"showLightning": true,
+		"lightningColor": "#FFFFFF",
+		"lightningSuffix": "⚡",
+		// 显示冰冻伤害
+		"showFreeze": true,
+		"freezeColor": "#71A5FF",
+		"freezeSuffix": "❄",
+		// 显示凋零伤害
+		"showWither": true,
+		"witherColor": "#333333",
+		"witherSuffix": "☠",
+		// 显示坠落伤害
+		"showFall": true,
+		"fallColor": "#AAAAAA",
+		"fallSuffix": "⇣",
+		// 显示远程伤害
+		"showArrow": true,
+		"arrowColor": "#DDDDDD",
+		"arrowSuffix": "➹",
+		// 是否显示流血样式
+		"showBleeding": true,
+		"bleedingColor": "#FF2222",
+		"bleedingSuffix": "🩸",
+		// 是否显示击晕样式
+		"showStun": true,
+		"stunColor": "#FFD700",
+		"stunPrefix": "💫 ",
+		// 是否显示撕裂样式
+		"showLacerate": true,
+		"lacerateColor": "#FF6B35",
+		"laceratePrefix": "✖ ",
+		// 是否显示骨折样式
+		"showFracture": true,
+		"fractureColor": "#8B4513",
+		"fractureSuffix": "🦴",
+		// 默认主颜色
+		"defaultColor": "#EEEEEE",
+		// 默认后缀图标
+		"defaultSuffix": "⚔",
+		// 默认后缀颜色
+		"defaultSuffixColor": "#888888"
+	},
+	// 伤害/治疗数字黑名单 (实体注册名, 如 minecraft:armor_stand)
+	"entityBlacklist": [
+		"minecraft:armor_stand",
+		"minecraft:warden"
+	]
+}

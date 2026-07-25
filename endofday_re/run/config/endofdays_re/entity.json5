@@ -1,0 +1,220 @@
+{
+	// 盔甲尝试生成次数
+	"ArrmorSpawnMax": 4,
+	// 僵尸盔甲生成配置
+	"Arrmor": {
+		"铁头": {
+			// 盔甲ID
+			"id": "minecraft:iron_helmet",
+			// 盔甲生成可能性
+			"chance": 0.5,
+			// 应该携带附魔
+			"enchanted": true,
+			// 附魔配置表
+			"enchantes": [
+				{
+					// 附魔ID
+					"id": "minecraft:protection",
+					// 附魔生成可能性
+					"chance": 0.5,
+					// 附魔等级配置
+					"level": {
+						// 附魔允许最小级别
+						"level": 1,
+						// 附魔允许最大级别
+						"maxLevel": 3
+					}
+				},
+				{
+					// 附魔ID
+					"id": "minecraft:unbreaking",
+					// 附魔生成可能性
+					"chance": 0.3,
+					// 附魔等级配置
+					"level": {
+						// 附魔允许最小级别
+						"level": 1,
+						// 附魔允许最大级别
+						"maxLevel": 2
+					}
+				}
+			],
+			// 标签
+			"tag": "{}",
+			// 插槽名称
+			"slot": "HEAD",
+			// 配置什么时候启用 基于天数时间
+			"day": 20,
+			// 配置什么时候结束使用 基于天数时间
+			"end_day": 80
+		},
+		"钻石头": {
+			// 盔甲ID
+			"id": "minecraft:diamond_helmet",
+			// 盔甲生成可能性
+			"chance": 0.05,
+			// 应该携带附魔
+			"enchanted": true,
+			// 附魔配置表
+			"enchantes": [],
+			// 标签
+			"tag": "{}",
+			// 插槽名称
+			"slot": "HEAD",
+			// 配置什么时候启用 基于天数时间
+			"day": 45,
+			// 配置什么时候结束使用 基于天数时间
+			"end_day": 100
+		},
+		"铁裤子": {
+			// 盔甲ID
+			"id": "minecraft:iron_leggings",
+			// 盔甲生成可能性
+			"chance": 0.5,
+			// 应该携带附魔
+			"enchanted": true,
+			// 附魔配置表
+			"enchantes": [
+				{
+					// 附魔ID
+					"id": "minecraft:protection",
+					// 附魔生成可能性
+					"chance": 0.5,
+					// 附魔等级配置
+					"level": {
+						// 附魔允许最小级别
+						"level": 1,
+						// 附魔允许最大级别
+						"maxLevel": 3
+					}
+				}
+			],
+			// 标签
+			"tag": "{}",
+			// 插槽名称
+			"slot": "LEGS",
+			// 配置什么时候启用 基于天数时间
+			"day": 20,
+			// 配置什么时候结束使用 基于天数时间
+			"end_day": 80
+		},
+		"钻石靴子": {
+			// 盔甲ID
+			"id": "minecraft:diamond_boots",
+			// 盔甲生成可能性
+			"chance": 0.06,
+			// 应该携带附魔
+			"enchanted": true,
+			// 附魔配置表
+			"enchantes": [],
+			// 标签
+			"tag": "{}",
+			// 插槽名称
+			"slot": "FEET",
+			// 配置什么时候启用 基于天数时间
+			"day": 50,
+			// 配置什么时候结束使用 基于天数时间
+			"end_day": 90
+		},
+		"铁胸甲": {
+			// 盔甲ID
+			"id": "minecraft:iron_chestplate",
+			// 盔甲生成可能性
+			"chance": 0.5,
+			// 应该携带附魔
+			"enchanted": true,
+			// 附魔配置表
+			"enchantes": [
+				{
+					// 附魔ID
+					"id": "minecraft:protection",
+					// 附魔生成可能性
+					"chance": 0.6,
+					// 附魔等级配置
+					"level": {
+						// 附魔允许最小级别
+						"level": 1,
+						// 附魔允许最大级别
+						"maxLevel": 4
+					}
+				}
+			],
+			// 标签
+			"tag": "{}",
+			// 插槽名称
+			"slot": "CHEST",
+			// 配置什么时候启用 基于天数时间
+			"day": 20,
+			// 配置什么时候结束使用 基于天数时间
+			"end_day": 80
+		},
+		"钻石裤子": {
+			// 盔甲ID
+			"id": "minecraft:diamond_leggings",
+			// 盔甲生成可能性
+			"chance": 0.04,
+			// 应该携带附魔
+			"enchanted": true,
+			// 附魔配置表
+			"enchantes": [],
+			// 标签
+			"tag": "{}",
+			// 插槽名称
+			"slot": "LEGS",
+			// 配置什么时候启用 基于天数时间
+			"day": 70,
+			// 配置什么时候结束使用 基于天数时间
+			"end_day": 120
+		},
+		"钻石胸甲": {
+			// 盔甲ID
+			"id": "minecraft:diamond_chestplate",
+			// 盔甲生成可能性
+			"chance": 0.03,
+			// 应该携带附魔
+			"enchanted": true,
+			// 附魔配置表
+			"enchantes": [],
+			// 标签
+			"tag": "{}",
+			// 插槽名称
+			"slot": "CHEST",
+			// 配置什么时候启用 基于天数时间
+			"day": 80,
+			// 配置什么时候结束使用 基于天数时间
+			"end_day": 150
+		},
+		"铁靴子": {
+			// 盔甲ID
+			"id": "minecraft:iron_boots",
+			// 盔甲生成可能性
+			"chance": 0.5,
+			// 应该携带附魔
+			"enchanted": true,
+			// 附魔配置表
+			"enchantes": [
+				{
+					// 附魔ID
+					"id": "minecraft:feather_falling",
+					// 附魔生成可能性
+					"chance": 0.4,
+					// 附魔等级配置
+					"level": {
+						// 附魔允许最小级别
+						"level": 1,
+						// 附魔允许最大级别
+						"maxLevel": 2
+					}
+				}
+			],
+			// 标签
+			"tag": "{}",
+			// 插槽名称
+			"slot": "FEET",
+			// 配置什么时候启用 基于天数时间
+			"day": 20,
+			// 配置什么时候结束使用 基于天数时间
+			"end_day": 80
+		}
+	}
+}

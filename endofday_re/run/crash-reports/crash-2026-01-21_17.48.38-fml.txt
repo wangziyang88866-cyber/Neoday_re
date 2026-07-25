@@ -1,0 +1,152 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 2026-01-21 17:48:38
+Description: Mod loading failures have occurred; consult the issue messages for more details
+
+net.neoforged.neoforge.logging.CrashReportExtender$ModLoadingCrashException: Mod loading has failed
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.state.StateHolder.setValue(StateHolder.java:109) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+-- Mod loading issue for: endofday_re --
+Details:
+	Mod file: /D:/idea/code/endofday_re/build/classes/java/main/
+	Failure message: endofday_re (endofday_re) encountered an error while dispatching the net.neoforged.neoforge.registries.RegisterEvent event
+		java.lang.IllegalArgumentException: Cannot set property IntegerProperty{name=level, clazz=class java.lang.Integer, values=[1, 2, 3, 4, 5, 6, 7, 8]} as it does not exist in endofdays_re_re:flowing_quicksand
+	Mod version: 1.0-SNAPSHOT
+	Mod issues URL: <No issues URL found>
+	Exception message: java.lang.IllegalArgumentException: Cannot set property IntegerProperty{name=level, clazz=class java.lang.Integer, values=[1, 2, 3, 4, 5, 6, 7, 8]} as it does not exist in endofdays_re_re:flowing_quicksand
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.state.StateHolder.setValue(StateHolder.java:109) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.material.FlowingFluid.getFlowing(FlowingFluid.java:232) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.LiquidBlock.<init>(LiquidBlock.java:73) ~[neoforge-21.1.218.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.register.block.QuicksandFluidBlock.<init>(QuicksandFluidBlock.java:32) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.register.RgisterBlock.lambda$static$0(RgisterBlock.java:32) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.DeferredRegister$Blocks.lambda$register$0(DeferredRegister.java:417) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.DeferredRegister.lambda$register$1(DeferredRegister.java:234) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.DeferredRegister.lambda$addEntries$2(DeferredRegister.java:375) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.RegisterEvent.register(RegisterEvent.java:48) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.DeferredRegister.addEntries(DeferredRegister.java:375) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.ConsumerEventHandler.invoke(ConsumerEventHandler.java:27) ~[bus-8.0.5.jar%23150!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar%23150!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:342) ~[bus-8.0.5.jar%23150!/:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:177) ~[loader-4.0.42.jar%23146!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$postEventWithWrapInModOrder$16(ModLoader.java:379) ~[loader-4.0.42.jar%23146!/:4.0] {}
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModList.forEachModInOrder(ModList.java:174) ~[loader-4.0.42.jar%23146!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:377) ~[loader-4.0.42.jar%23146!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:368) ~[loader-4.0.42.jar%23146!/:4.0] {}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.GameData.postRegisterEvents(GameData.java:92) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.internal.CommonModLoader.lambda$begin$0(CommonModLoader.java:54) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?] {}
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?] {}
+
+
+-- Mod loading issue for: endofday_re --
+Details:
+	Mod file: /D:/idea/code/endofday_re/build/classes/java/main/
+	Failure message: endofday_re (endofday_re) encountered an error while dispatching the net.neoforged.neoforge.registries.RegisterEvent event
+		java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / endofdays_re_re:quicksand_bucket_block]
+	Mod version: 1.0-SNAPSHOT
+	Mod issues URL: <No issues URL found>
+	Exception message: java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / endofdays_re_re:quicksand_bucket_block]
+Stacktrace:
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.DeferredHolder.value(DeferredHolder.java:103) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.DeferredHolder.get(DeferredHolder.java:117) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/endofday_re@1.0-SNAPSHOT/com.endofday_re.level.entity.register.RegisterItem.lambda$static$1(RegisterItem.java:29) ~[%23191!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.DeferredRegister.lambda$register$0(DeferredRegister.java:215) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.DeferredRegister.lambda$register$1(DeferredRegister.java:234) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.DeferredRegister.lambda$addEntries$2(DeferredRegister.java:375) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.RegisterEvent.register(RegisterEvent.java:48) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.DeferredRegister.addEntries(DeferredRegister.java:375) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.ConsumerEventHandler.invoke(ConsumerEventHandler.java:27) ~[bus-8.0.5.jar%23150!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar%23150!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:342) ~[bus-8.0.5.jar%23150!/:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:177) ~[loader-4.0.42.jar%23146!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$postEventWithWrapInModOrder$16(ModLoader.java:379) ~[loader-4.0.42.jar%23146!/:4.0] {}
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModList.forEachModInOrder(ModList.java:174) ~[loader-4.0.42.jar%23146!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:377) ~[loader-4.0.42.jar%23146!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:368) ~[loader-4.0.42.jar%23146!/:4.0] {}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.registries.GameData.postRegisterEvents(GameData.java:92) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.218/net.neoforged.neoforge.internal.CommonModLoader.lambda$begin$0(CommonModLoader.java:54) ~[neoforge-21.1.218.jar%23190!/:?] {re:classloading}
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?] {}
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 21.0.9, Azul Systems, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Azul Systems, Inc.
+	Memory: 73785400 bytes (70 MiB) / 658505728 bytes (628 MiB) up to 4257218560 bytes (4060 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz
+	Identifier: Intel64 Family 6 Model 158 Stepping 10
+	Microarchitecture: Coffee Lake
+	Frequency (GHz): 2.40
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: NVIDIA GeForce GTX 1650
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 4096.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.5612
+	Graphics card #1 name: Intel(R) UHD Graphics 630
+	Graphics card #1 vendor: Intel Corporation
+	Graphics card #1 VRAM (MiB): 1024.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 31.0.101.2127
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.67
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 43883.96
+	Virtual memory used (MiB): 15681.49
+	Swap memory total (MiB): 27648.00
+	Swap memory used (MiB): 136.85
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 91347.98, total: 336758.31
+	Space in storage for workdir (MiB): available: 60559.70, total: 149999.00
+	JVM Flags: 0 total; 
+	ModLauncher: 11.0.5+main.901c6ea8
+	ModLauncher launch target: forgeclientdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-4.0.42.jar slf4jfixer PLUGINSERVICE 
+		loader-4.0.42.jar runtime_enum_extender PLUGINSERVICE 
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE 
+		loader-4.0.42.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-11.0.5.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-11.0.5.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List: 
+		cloth-config-348521-5729127.jar                   |Cloth Config v15 API          |cloth_config                  |15.0.140            |Manifest: NOSIGNATURE
+		main                                              |endofday_re                   |endofday_re                   |1.0-SNAPSHOT        |Manifest: NOSIGNATURE
+		neoforge-21.1.218.jar                             |Minecraft                     |minecraft                     |1.21.1              |Manifest: NOSIGNATURE
+		neoforge-21.1.218.jar                             |NeoForge                      |neoforge                      |21.1.218            |Manifest: NOSIGNATURE
+		tacz-1-21-1-1353462-7374584.jar                   |Timeless & Classics Guns: Zero|tacz                          |1.1.7-r2            |Manifest: NOSIGNATURE
+	Crash Report UUID: 1ac96fbc-9bcf-4c32-ba41-cf1a3f02654c
+	FML: 4.0.42
+	NeoForge: 21.1.218

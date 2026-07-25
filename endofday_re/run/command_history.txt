@@ -1,0 +1,50 @@
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/effect give f1b5d607-16e6-44f9-9b1d-1a2f6a417988 minecraft:instant_health infinite
+/effect give f1b5d607-16e6-44f9-9b1d-1a2f6a417988 minecraft:health_boost infinite
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/effect give Dev minecraft:night_vision infinite
+/time add 95d
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/effect give 7e2a8cdf-7abf-4863-b5da-f750c8bb6d0f minecraft:instant_health infinite
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/effect give 398cb2b6-d98b-432b-8916-5e2104252537 minecraft:instant_health infinite
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/time add 95d
+/gamemode spectator
+/gamemode creative
+/gamemode spectator
+/gamemode creative
+/gamemode spectator

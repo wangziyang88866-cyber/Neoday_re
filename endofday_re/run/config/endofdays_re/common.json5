@@ -1,0 +1,415 @@
+{
+	// 追踪方块扫描间隔单位为秒,作用于僵尸寻找破坏方块,过小的值可能导致性能问题,如果发现在僵尸量很多的情况下TPS狂掉请调整此项
+	"follow_block_scan_interval": 3,
+	// 基础温度<=-10[地表转为雪地]树木枯萎,[>=30]地表转为沙地,树木枯萎.
+	"temperature": 30.0,
+	// 每日尝试抽取出售多少商品上限 当值 -1 表示根据已添加商品总量进行
+	"max_count": -1,
+	// 析光熔融器 黑名单列表
+	"SMELT_BLACKLIST": [
+		"minecraft:rotten_flesh",
+		"#minecraft:logs",
+		"#minecraft:planks",
+		"#forge:cobblestone",
+		"minecraft:sand"
+	],
+	// 自动同步全局数据包间隔,每隔5秒,越小的值可能对服务端的压力越大,但是越小的值客户端更新数据越快,针对非本地服务端.-1禁用
+	"max_time": 50,
+	// 开启天数滞留
+	"enable_stuck_day": false,
+	// 滞留间隔每多少天为1天
+	"Retention_interval": 7,
+	// 允许生成尸体
+	"enable_corpse": false,
+	// 一个范围内生成多少尸体
+	"corpse_max": 6,
+	// 游戏模块设置
+	"commonData": {
+		"follow_range": {
+			// 值
+			"value": 16,
+			// 最小值
+			"min_value": 16,
+			// 最大值
+			"max_value": 32,
+			// Language 键映射
+			"lang": "endofdays_re.common.follow_range",
+			// 默认值
+			"DefaultValue": 16
+		}
+	},
+	"commonFloat": {
+		"use_bow": {
+			// 值
+			"value": 290.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.use.probability.bow",
+			// 默认值
+			"DefaultValue": 0.28999999165534973
+		},
+		"spawn_tnt_zombie": {
+			// 值
+			"value": 0.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.probability.tnt_zombie",
+			// 默认值
+			"DefaultValue": 0.25
+		},
+		"spawn_trident_zombie": {
+			// 值
+			"value": 250.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.probability.trident_zombie",
+			// 默认值
+			"DefaultValue": 0.25
+		},
+		"spawn_tnt_zombie_ca": {
+			// 值
+			"value": 0.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.spawn_tnt_zombie_ca",
+			// 默认值
+			"DefaultValue": 0.5
+		},
+		"place_block_zombie_spawn": {
+			// 值
+			"value": 300.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.place_block_zombie",
+			// 默认值
+			"DefaultValue": 0.5
+		},
+		"spawn_tacz_zombie": {
+			// 值
+			"value": 0.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.tacz",
+			// 默认值
+			"DefaultValue": 0.44999998807907104
+		},
+		"spawn_dispenser_zombie": {
+			// 值
+			"value": 270.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.dispenser",
+			// 默认值
+			"DefaultValue": 0.44999998807907104
+		},
+		"spawn_zombie_pearls": {
+			// 值
+			"value": 0.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.probability.pearls",
+			// 默认值
+			"DefaultValue": 0.25999999046325684
+		},
+		"spawn_ride_zombie": {
+			// 值
+			"value": 0.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.ride",
+			// 默认值
+			"DefaultValue": 0.20000000298023224
+		},
+		"spawn_fishing_zombie": {
+			// 值
+			"value": 250.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.probability.fishing_zombie",
+			// 默认值
+			"DefaultValue": 0.25
+		},
+		"spawn_zombie_shield": {
+			// 值
+			"value": 500.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.probability.shield_zombie",
+			// 默认值
+			"DefaultValue": 0.5
+		},
+		"probability_jump": {
+			// 值
+			"value": 450.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.probability.jump",
+			// 默认值
+			"DefaultValue": 0.44999998807907104
+		},
+		"spawn_bow_zombie": {
+			// 值
+			"value": 250.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.probability.bow_zombie",
+			// 默认值
+			"DefaultValue": 0.25
+		},
+		"use_fishing": {
+			// 值
+			"value": 250.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.use.probability.fishing",
+			// 默认值
+			"DefaultValue": 0.25
+		},
+		"use_pearls": {
+			// 值
+			"value": 150.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.use.probability.pearls",
+			// 默认值
+			"DefaultValue": 0.15000000596046448
+		},
+		"place_tnt": {
+			// 值
+			"value": 500.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.use.probability.tnt",
+			// 默认值
+			"DefaultValue": 0.5
+		},
+		"spawn_break_zombie": {
+			// 值
+			"value": 300.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.break",
+			// 默认值
+			"DefaultValue": 0.44999998807907104
+		},
+		"use_shield": {
+			// 值
+			"value": 290.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.use.probability.shield",
+			// 默认值
+			"DefaultValue": 0.28999999165534973
+		},
+		"use_trident": {
+			// 值
+			"value": 450.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.use.probability.trident",
+			// 默认值
+			"DefaultValue": 0.44999998807907104
+		}
+	},
+	// 敌对目标实体
+	"Target": {
+		"村民": {
+			// 攻击者
+			"mobId": "minecraft:zombie",
+			// 允许被攻击者
+			"Target": "minecraft:villager"
+		},
+		"坚守者": {
+			// 攻击者
+			"mobId": "minecraft:zombie",
+			// 允许被攻击者
+			"Target": "minecraft:warden"
+		},
+		"僵尸": {
+			// 攻击者
+			"mobId": "minecraft:zombie",
+			// 允许被攻击者
+			"Target": "minecraft:player"
+		}
+	},
+	// 替换的目标实体
+	"replace_": {
+		"minecraft:MONSTER": "minecraft:zombie"
+	},
+	// 方块破坏黑名单
+	"banlist": {
+		"黑曜石": "minecraft:obsidian"
+	},
+	// 僵尸应该主动破坏什么方块,regex前缀为正则表达式
+	"FollowBlockBreak": {
+		"火把": "regex:^minecraft:*torch$",
+		"所有箱子": "regex:^minecraft:.*chest$",
+		"工作台": "minecraft:crafting_table",
+		"所有床": "regex:^minecraft:.*_bed$",
+		"灵魂火把": "minecraft:soul_torch"
+	},
+	// 僵尸偷盗配置 container前缀为可偷盗的容器,items前缀为可偷盗的物品,regex前缀为正则表达式
+	"EquipChestMob": {
+		"所有箱子": "container:regex:^minecraft:.*chest$",
+		"附魔金苹果": "items:minecraft:enchanted_golden_apple",
+		"不死图腾": "items:minecraft:totem_of_undying",
+		"所有护甲": "items:regex:^minecraft:.*_(helmet|chestplate|leggings|boots)$",
+		"金苹果": "items:minecraft:golden_apple"
+	},
+	// Tacz枪械配置
+	"taczData": {
+		"m700": {
+			// 枪械id
+			"id": "m700",
+			// 射击模式
+			"FireMode": "SEMI",
+			// 需要弹药?
+			"AmmoInBarrel": false,
+			// 生成权重
+			"weight": 25,
+			// 攻击半径
+			"radius": 40,
+			// 移动速度
+			"move_sped": 0.8999999761581421,
+			// 攻击间隔
+			"attadk_speed": 45
+		},
+		"m95": {
+			// 枪械id
+			"id": "m95",
+			// 射击模式
+			"FireMode": "SEMI",
+			// 需要弹药?
+			"AmmoInBarrel": false,
+			// 生成权重
+			"weight": 10,
+			// 攻击半径
+			"radius": 55,
+			// 移动速度
+			"move_sped": 0.699999988079071,
+			// 攻击间隔
+			"attadk_speed": 85
+		},
+		"ak47": {
+			// 枪械id
+			"id": "ak47",
+			// 射击模式
+			"FireMode": "AUTO",
+			// 需要弹药?
+			"AmmoInBarrel": false,
+			// 生成权重
+			"weight": 40,
+			// 攻击半径
+			"radius": 22,
+			// 移动速度
+			"move_sped": 1.0,
+			// 攻击间隔
+			"attadk_speed": 12
+		},
+		"deagle": {
+			// 枪械id
+			"id": "deagle",
+			// 射击模式
+			"FireMode": "SEMI",
+			// 需要弹药?
+			"AmmoInBarrel": false,
+			// 生成权重
+			"weight": 60,
+			// 攻击半径
+			"radius": 15,
+			// 移动速度
+			"move_sped": 1.100000023841858,
+			// 攻击间隔
+			"attadk_speed": 20
+		},
+		"rpg7": {
+			// 枪械id
+			"id": "rpg7",
+			// 射击模式
+			"FireMode": "UNKNOWN",
+			// 需要弹药?
+			"AmmoInBarrel": false,
+			// 生成权重
+			"weight": 5,
+			// 攻击半径
+			"radius": 32,
+			// 移动速度
+			"move_sped": 0.6000000238418579,
+			// 攻击间隔
+			"attadk_speed": 180
+		},
+		"aa12": {
+			// 枪械id
+			"id": "aa12",
+			// 射击模式
+			"FireMode": "SEMI",
+			// 需要弹药?
+			"AmmoInBarrel": false,
+			// 生成权重
+			"weight": 15,
+			// 攻击半径
+			"radius": 10,
+			// 移动速度
+			"move_sped": 1.0499999523162842,
+			// 攻击间隔
+			"attadk_speed": 60
+		}
+	}
+}

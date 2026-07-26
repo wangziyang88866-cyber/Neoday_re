@@ -24,6 +24,6 @@ forgedatadev
 endofdays_re
 --all
 --output
-"/Users/wangziyang/Downloads/endofday_re-main 2/endofday_re/src/generated/resources"
+"/Users/wangziyang/Downloads/备份/endofday_re-main 2/endofday_re/src/generated/resources"
 --existing
-"/Users/wangziyang/Downloads/endofday_re-main 2/endofday_re/src/main/resources"
+"/Users/wangziyang/Downloads/备份/endofday_re-main 2/endofday_re/src/main/resources"

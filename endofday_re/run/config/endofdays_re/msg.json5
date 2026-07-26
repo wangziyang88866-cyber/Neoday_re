@@ -19,24 +19,6 @@
 			// 权重
 			"weight": 100
 		},
-		"moon_msg": {
-			// 启用时间
-			"day": 0,
-			// 结束时间
-			"endDay": 100,
-			// Language 键映射 MSG
-			"msg": "endofdays_re.event.moon.msg",
-			// Language 键映射
-			"lang": "",
-			// 方法类型
-			"eventMode": "BLOOD",
-			// 触发刻度
-			"time": "NIGHT",
-			// 前置要求
-			"pre": [],
-			// 权重
-			"weight": 100
-		},
 		"blood_sleep": {
 			// 启用时间
 			"day": -1,
@@ -50,6 +32,24 @@
 			"eventMode": "NONE",
 			// 触发刻度
 			"time": "NONE",
+			// 前置要求
+			"pre": [],
+			// 权重
+			"weight": 100
+		},
+		"moon_msg": {
+			// 启用时间
+			"day": 0,
+			// 结束时间
+			"endDay": 100,
+			// Language 键映射 MSG
+			"msg": "endofdays_re.event.moon.msg",
+			// Language 键映射
+			"lang": "",
+			// 方法类型
+			"eventMode": "BLOOD",
+			// 触发刻度
+			"time": "NIGHT",
 			// 前置要求
 			"pre": [],
 			// 权重

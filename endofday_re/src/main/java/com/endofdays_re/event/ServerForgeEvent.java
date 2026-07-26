@@ -63,22 +63,20 @@ public enum ServerForgeEvent {
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void onMobSpawnFinalize(FinalizeSpawnEvent event) {
         LivingEntity entity = event.getEntity();
-        // 1.21.1 逻辑优化：通常 FinalizeSpawn 只在服务端触发，但保持检查是好习惯
-        if (entity.level().isClientSide) return;
 
+        if (entity.level().isClientSide || event.isSpawnCancelled()) {
+            return;
+        }
+        AttributeHelper.apply(entity);
 
-        // 状态强化逻辑 (如果实体没有被取消生成)
-        if (!event.isSpawnCancelled()) {
-            if (entity instanceof Zombie zombie && isDayEnable("enable")) {
-                // 僵尸血月标记
-                if (AllSyncValue.Instance.mode == ModeEventType.BLOOD) {
-                    // 1.21.1 中 getPersistentData() 依然可用，但建议之后迁移到 Data Attachments
-                    zombie.getPersistentData().putBoolean(ModUtils.KeyWraps("blood"), true);
-                }
-                // 护甲强化已由ZombieArmorMixin处理
+        if (entity instanceof Zombie zombie && isDayEnable("enable")) {
+            if (AllSyncValue.Instance.mode == ModeEventType.BLOOD) {
+                zombie.getPersistentData().putBoolean(
+                        ModUtils.KeyWraps("blood"),
+                        true
+                );
             }
         }
-
     }
 
     // --- 2. 行为/AI 注册 (Brain 系统适配) ---
@@ -368,53 +366,72 @@ public enum ServerForgeEvent {
     // --- 10. 实体燃烧与 AI 特殊逻辑 ---
 
     @SubscribeEvent
-    public static void onLivingTick(EntityTickEvent.Pre event) {
-        if (event.getEntity() instanceof LivingEntity entity) {
-            if (entity.level().isClientSide) return;
+    public static void onLivingTick(EntityTickEvent.Post event) {
+        if (!(event.getEntity() instanceof Zombie zombie)) {
+            return;
+        }
 
-            // 确保是僵尸且功能开启
-            if (entity instanceof Zombie zombie && isDayEnable("enable")) {
+        if (zombie.level().isClientSide) {
+            return;
+        }
 
-                // 1. 阳光免疫与血月燃烧逻辑
-                if (isDayEnable("immune_sun") && ConfigData.enableConfigData.Data.get("immune_sun_enable").enable) {
-                    // 如果在着火，强制熄灭
-                    if (zombie.isOnFire()) {
-                        zombie.clearFire();
-                        zombie.setRemainingFireTicks(0);
-                    }
+        if (!isDayEnable("enable")) {
+            return;
+        }
 
-                    // 特殊逻辑：如果是血月僵尸且是白天，反而让它自燃（根据你的业务逻辑）
-                    if (AllSyncValue.Instance.isDay && zombie.getPersistentData().contains(ModUtils.KeyWraps("blood"))) {
-                        if (!zombie.isOnFire()) {
-                            zombie.igniteForSeconds(60); // 1.21.1 推荐使用 igniteForSeconds
-                        }
-                    }
-                }
+        /*
+         * 第 35 天后的“阳光免疫”：
+         * 必须在实体 tick 后熄火，否则原版 Zombie tick
+         * 可能会在 Pre 事件之后重新点燃它。
+         */
+        boolean sunImmuneEnabled =
+                isDayEnable("immune_sun")
+                        && ConfigData.enableConfigData.Data
+                        .get("immune_sun_enable")
+                        .enable;
 
-                // 2. 僵尸搭建 AI 触发逻辑
-                // 建议每 10 tick 检查一次以节省 CPU
-                if (zombie.tickCount % 10 == 0) {
-                    PathBuildingGoal pathGoal = getPathGoalFromZombie(zombie);
+        if (sunImmuneEnabled && zombie.isOnFire()) {
+            zombie.clearFire();
+            zombie.setRemainingFireTicks(0);
+        }
 
-                    // 只有当僵尸有目标、没在干活、且冷却完毕时才触发
-                    if (pathGoal != null && zombie.getTarget() != null && !pathGoal.isWorking() && pathGoal.canUsePathBuilder()) {
+        /*
+         * 注意：不要再根据 blood 标记调用 igniteForSeconds。
+         * blood 标记只表示它出生在血月，不应成为白天处死它的条件。
+         */
 
-                        Path path = zombie.getNavigation().getPath();
+        if (zombie.tickCount % 10 != 0) {
+            return;
+        }
 
-                        // 使用平方距离避免 Math.sqrt 开销 (3.5 * 3.5 = 12.25)
-                        double hDistSqr = zombie.distanceToSqr(zombie.getTarget().getX(), zombie.getY(), zombie.getTarget().getZ());
-                        int vDist = Math.abs(zombie.blockPosition().getY() - zombie.getTarget().blockPosition().getY());
+        PathBuildingGoal pathGoal = getPathGoalFromZombie(zombie);
 
-                        // 触发条件：没有路径/路径无法到达 OR (水平距离近但高度差大)
-                        boolean noPath = (path == null || !path.canReach());
-                        boolean verticalGap = (hDistSqr <= 12.25D && vDist > 2);
+        if (pathGoal == null
+                || zombie.getTarget() == null
+                || pathGoal.isWorking()
+                || !pathGoal.canUsePathBuilder()) {
+            return;
+        }
 
-                        if (noPath || verticalGap) {
-                            pathGoal.triggerBuildSequence(zombie.getTarget().blockPosition());
-                        }
-                    }
-                }
-            }
+        Path path = zombie.getNavigation().getPath();
+
+        double horizontalDistanceSqr = zombie.distanceToSqr(
+                zombie.getTarget().getX(),
+                zombie.getY(),
+                zombie.getTarget().getZ()
+        );
+
+        int verticalDistance = Math.abs(
+                zombie.blockPosition().getY()
+                        - zombie.getTarget().blockPosition().getY()
+        );
+
+        boolean noReachablePath = path == null || !path.canReach();
+        boolean targetTooHighOrTooLow =
+                horizontalDistanceSqr <= 12.25D && verticalDistance > 2;
+
+        if (noReachablePath || targetTooHighOrTooLow) {
+            pathGoal.triggerBuildSequence(zombie.getTarget().blockPosition());
         }
     }
 

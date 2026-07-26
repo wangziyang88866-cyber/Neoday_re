@@ -27,7 +27,9 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.AABB;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -41,7 +43,18 @@ public enum SpawnerHelper {
     ;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SpawnerHelper.class);
-    private static final ExpressionEvaluatorTool EVAL = new ExpressionEvaluatorTool();
+    private static final ExpressionEvaluatorTool FUNCTION_CHECKER =
+            new ExpressionEvaluatorTool();
+
+    private static final Set<String> KNOWN_ATTRIBUTE_VARIABLES =
+            Set.of("day", "time", "BASE");
+
+    private static final Pattern ATTRIBUTE_IDENTIFIER_PATTERN =
+            Pattern.compile("[a-zA-Z_][a-zA-Z0-9_]*");
+
+    private static final Pattern LEGACY_BASE_VARIABLE_PATTERN = Pattern.compile(
+            "\\bBASE_(?:HEALTH|BUILD_SPEED|BREAKER_SPEED|ARMOR|MOVE_SPEED|ATTACK_DAMAGE)\\b"
+    );
 
     private static final long ENTITY_COUNT_CACHE_TICKS = 20L;
     private static final int MAX_SPAWN_POINT_ATTEMPTS = 256;
@@ -424,14 +437,34 @@ public enum SpawnerHelper {
             return false;
         }
 
-        // 先套用 AttributeBuild 里配置的"默认按生成天数决定属性"，
-        // 再让该条刷怪规则自己的 attributes（entityConfig.attributes）覆盖，
-        // 这样"默认按天数生成"和"某条规则单独指定"两者都保留，后者优先级更高。
+        /*
+         * NBT 先应用，属性配置后应用。
+         * 这样 NBT 即使修改了基础属性，最终仍由属性配置接管。
+         */
+        applyNBTTag(entity, entityConfig.nbt_tag);
+
+        /*
+         * 默认按生成天数增强。
+         */
         AttributeHelper.apply(entity);
 
-        applyNBTTag(entity, entityConfig.nbt_tag);
+        /*
+         * 单条刷怪规则的属性覆盖，优先级最高。
+         */
         applyAttributes(entity, entityConfig.attributes);
+
         applyEquipments(entity, entityConfig.equipments, random);
+
+        if (entity instanceof Mob mob) {
+            endofdays_re$postSpawnInit(mob, world);
+        }
+
+        /*
+         * 最终兜底：NBT 或配置不能让实体带着 0 生命出生。
+         */
+        if (!ensureValidSpawnHealth(entity, entityId)) {
+            return false;
+        }
 
         entity.moveTo(
                 pos.getX() + 0.5D,
@@ -441,15 +474,7 @@ public enum SpawnerHelper {
                 0.0F
         );
 
-        if (!world.addFreshEntity(entity)) {
-            return false;
-        }
-
-        if (entity instanceof Mob mob) {
-            endofdays_re$postSpawnInit(mob, world);
-        }
-
-        return true;
+        return world.addFreshEntity(entity);
     }
 
     private static SpawnerBuild.EntityConfig selectRandomEntity(
@@ -504,6 +529,66 @@ public enum SpawnerHelper {
             LOGGER.warn("[Spawner] 实体 NBT 应用失败: {}", exception.getMessage());
         }
     }
+    private static boolean ensureValidSpawnHealth(
+            LivingEntity entity,
+            ResourceLocation entityId
+    ) {
+        float maxHealth = entity.getMaxHealth();
+        float health = entity.getHealth();
+
+        if (!Float.isFinite(maxHealth) || maxHealth <= 0.0F) {
+            LOGGER.error(
+                    "[Spawner] 实体最大生命非法，取消生成：entity={}, health={}, maxHealth={}",
+                    entityId, health, maxHealth
+            );
+            return false;
+        }
+
+        if (!Float.isFinite(health) || health <= 0.0F) {
+            LOGGER.warn(
+                    "[Spawner] 实体当前生命非法，重置为最大生命：entity={}, health={}, maxHealth={}",
+                    entityId, health, maxHealth
+            );
+            entity.setHealth(maxHealth);
+            return true;
+        }
+
+        if (health > maxHealth) {
+            entity.setHealth(maxHealth);
+        }
+
+        return true;
+    }
+
+    private static String normalizeLegacyBaseVariables(String formula) {
+        if (formula == null || formula.isBlank()) {
+            return formula;
+        }
+
+        return LEGACY_BASE_VARIABLE_PATTERN
+                .matcher(formula)
+                .replaceAll("BASE");
+    }
+
+    private static String findUnknownAttributeVariable(String formula) {
+        Matcher matcher = ATTRIBUTE_IDENTIFIER_PATTERN.matcher(formula);
+
+        while (matcher.find()) {
+            String token = matcher.group();
+
+            if (KNOWN_ATTRIBUTE_VARIABLES.contains(token)) {
+                continue;
+            }
+
+            if (FUNCTION_CHECKER.containsKey(token)) {
+                continue;
+            }
+
+            return token;
+        }
+
+        return null;
+    }
 
     private static void applyAttributes(
             LivingEntity entity,
@@ -513,27 +598,111 @@ public enum SpawnerHelper {
             return;
         }
 
-        EVAL.setVariable("day", (double) AllSyncValue.Instance.day);
+        long day = AllSyncValue.Instance.day;
+        long time = entity.level().getGameTime();
 
         for (SpawnerBuild.AttributeConfig attributeConfig : attributes) {
-            if (attributeConfig == null) {
+            if (attributeConfig == null
+                    || attributeConfig.attribute_id == null
+                    || attributeConfig.attribute_id.isBlank()
+                    || attributeConfig.formula == null
+                    || attributeConfig.formula.isBlank()) {
                 continue;
             }
 
             try {
+                /*
+                 * 1.21.1 NeoForge：attribute 是 Holder.Reference<Attribute>。
+                 */
                 var attribute = ModUtils.getAttribute(attributeConfig.attribute_id);
+
                 if (attribute == null) {
+                    LOGGER.warn(
+                            "[Spawner] 未知属性 ID，跳过：{}",
+                            attributeConfig.attribute_id
+                    );
                     continue;
                 }
 
                 AttributeInstance instance = entity.getAttribute(attribute);
                 if (instance == null) {
+                    LOGGER.debug(
+                            "[Spawner] 实体不支持属性，跳过：entity={}, attribute={}",
+                            BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()),
+                            attributeConfig.attribute_id
+                    );
                     continue;
                 }
 
-                instance.setBaseValue(EVAL.evaluate(attributeConfig.formula));
+                String originalFormula = attributeConfig.formula;
+                String formula = normalizeLegacyBaseVariables(originalFormula);
+
+                String badVariable = findUnknownAttributeVariable(formula);
+                if (badVariable != null) {
+                    LOGGER.warn(
+                            "[Spawner] 属性公式有未知变量，跳过：attribute={}, variable={}, formula={}",
+                            attributeConfig.attribute_id,
+                            badVariable,
+                            originalFormula
+                    );
+                    continue;
+                }
+
+                double baseValue = instance.getBaseValue();
+
+                ExpressionEvaluatorTool evaluator = new ExpressionEvaluatorTool();
+                evaluator.setVariable("day", (double) day);
+                evaluator.setVariable("time", (double) time);
+                evaluator.setVariable("BASE", baseValue);
+
+                double result = evaluator.evaluate(formula);
+
+                if (!Double.isFinite(result)) {
+                    LOGGER.error(
+                            "[Spawner] 属性公式结果非法，拒绝写入：entity={}, attribute={}, BASE={}, day={}, formula={}, result={}",
+                            BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()),
+                            attributeConfig.attribute_id,
+                            baseValue,
+                            day,
+                            formula,
+                            result
+                    );
+                    continue;
+                }
+
+                boolean isMaxHealth =
+                        attribute.value() == Attributes.MAX_HEALTH.value();
+
+                if (isMaxHealth && result <= 0.0D) {
+                    LOGGER.error(
+                            "[Spawner] 最大生命结果 <= 0，拒绝写入：entity={}, BASE={}, day={}, formula={}, result={}",
+                            BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()),
+                            baseValue,
+                            day,
+                            formula,
+                            result
+                    );
+                    continue;
+                }
+
+                instance.setBaseValue(result);
+
+                LOGGER.debug(
+                        "[Spawner] 属性覆盖成功：entity={}, attribute={}, BASE={}, day={}, formula={}, result={}",
+                        BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()),
+                        attributeConfig.attribute_id,
+                        baseValue,
+                        day,
+                        formula,
+                        result
+                );
             } catch (Exception exception) {
-                LOGGER.warn("[Spawner] 属性公式计算失败: {}", attributeConfig.formula);
+                LOGGER.warn(
+                        "[Spawner] 属性公式计算失败：attribute={}, formula={}, error={}",
+                        attributeConfig.attribute_id,
+                        attributeConfig.formula,
+                        exception.getMessage()
+                );
             }
         }
     }
@@ -671,14 +840,11 @@ public enum SpawnerHelper {
              * 1.21.1 不应再把它直接当作旧版 ItemStack NBT 使用。
              */
             if (armor.tag != null && !armor.tag.isBlank()) {
-                try {
-                    CompoundTag tag = TagParser.parseTag(armor.tag);
-                    CompoundTag current = mob.saveWithoutId(new CompoundTag());
-                    current.merge(tag);
-                    mob.load(current);
-                } catch (Exception exception) {
-                    LOGGER.warn("[Spawner] 装备 NBT 应用失败: {}", exception.getMessage());
-                }
+                LOGGER.warn(
+                        "[Spawner] armor.tag 已忽略：1.21.1 中它不能合并到实体 NBT；" +
+                                "否则可能覆盖实体的 Health 或 attributes。item={}",
+                        armor.id
+                );
             }
 
             mob.setItemSlot(armor.slot, stack);

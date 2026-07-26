@@ -1,12 +1,6 @@
 /gamemode spectator
 /gamemode creative
 /gamemode spectator
-/effect give f1b5d607-16e6-44f9-9b1d-1a2f6a417988 minecraft:instant_health infinite
-/effect give f1b5d607-16e6-44f9-9b1d-1a2f6a417988 minecraft:health_boost infinite
-/gamemode creative
-/gamemode spectator
-/gamemode creative
-/gamemode spectator
 /gamemode creative
 /gamemode spectator
 /gamemode creative
@@ -48,3 +42,9 @@
 /gamemode spectator
 /gamemode creative
 /gamemode spectator
+/gamemode creative
+/time add 50d
+/gamemode survival
+/gamemode creative
+/time set day
+/time add 100d

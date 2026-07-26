@@ -1,16 +1,6 @@
 {
 	// 游戏天数设置
 	"data": {
-		"place_block": {
-			// 生效时间
-			"day": 32,
-			// 失效时间
-			"endDay": 100,
-			// Language 键映射
-			"lang": "endofdays_re.day.entity.goal.place_block",
-			// 默认值
-			"DefaultValue": 0
-		},
 		"spawn_tnt_zombie": {
 			// 生效时间
 			"day": 75,
@@ -20,6 +10,16 @@
 			"lang": "endofdays_re.day.level.spawn_tnt_zombie",
 			// 默认值
 			"DefaultValue": 70
+		},
+		"place_block": {
+			// 生效时间
+			"day": 32,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.goal.place_block",
+			// 默认值
+			"DefaultValue": 0
 		},
 		"shield": {
 			// 生效时间
@@ -61,16 +61,6 @@
 			// 默认值
 			"DefaultValue": 19
 		},
-		"entity_climb": {
-			// 生效时间
-			"day": 7,
-			// 失效时间
-			"endDay": 100,
-			// Language 键映射
-			"lang": "endofdays_re.day.entity.spawn.entity_climb",
-			// 默认值
-			"DefaultValue": 32
-		},
 		"gigantic": {
 			// 生效时间
 			"day": 7,
@@ -80,6 +70,16 @@
 			"lang": "endofdays_re.day.entity.spawn.spawn_gigantic",
 			// 默认值
 			"DefaultValue": 49
+		},
+		"entity_climb": {
+			// 生效时间
+			"day": 7,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.spawn.entity_climb",
+			// 默认值
+			"DefaultValue": 32
 		},
 		"bow": {
 			// 生效时间
@@ -281,16 +281,6 @@
 			// 默认值
 			"DefaultValue": 69
 		},
-		"barker_vehicle": {
-			// 生效时间
-			"day": 35,
-			// 失效时间
-			"endDay": 100,
-			// Language 键映射
-			"lang": "endofdays_re.day.entity.bark.barker_vehicle",
-			// 默认值
-			"DefaultValue": 48
-		},
 		"potions": {
 			// 生效时间
 			"day": 35,
@@ -300,6 +290,16 @@
 			"lang": "endofdays_re.day.entity.use.potions",
 			// 默认值
 			"DefaultValue": 12
+		},
+		"barker_vehicle": {
+			// 生效时间
+			"day": 35,
+			// 失效时间
+			"endDay": 100,
+			// Language 键映射
+			"lang": "endofdays_re.day.entity.bark.barker_vehicle",
+			// 默认值
+			"DefaultValue": 48
 		}
 	}
 }

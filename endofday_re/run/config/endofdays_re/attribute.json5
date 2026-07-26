@@ -37,24 +37,6 @@
 			// 属性增益上限值
 			"max": 1024.0
 		},
-		"最大生命值": {
-			// 键名称
-			"key": null,
-			// 属性ID
-			"id": "minecraft:generic.max_health",
-			// 实体id（支持逗号分隔多个，或使用 * 表示所有实体生效）
-			"EntityID": "minecraft:zombie",
-			// 语言
-			"lang": "endofdays_re.attribute.max_health",
-			// 属性值或表达式。可用变量: BASE=该属性在原版中的基础值, day=僵尸生成时的天数（生成后固定，不会随时间再变化）。示例: BASE * (1 + day * 0.05)，比如第3天生成，20 * (1 + 3*0.05) = 23
-			"value": "BASE_HEALTH * (1 + day * 0.05)",
-			// 开始生效天数
-			"start": 1,
-			// 结束生效天数（小于0表示不限制）
-			"end": 100,
-			// 属性增益上限值
-			"max": 1024.0
-		},
 		"穿墙追踪距离": {
 			// 键名称
 			"key": null,
@@ -73,17 +55,17 @@
 			// 属性增益上限值
 			"max": 1024.0
 		},
-		"挖掘速度": {
+		"最大生命值": {
 			// 键名称
 			"key": null,
 			// 属性ID
-			"id": "endofdays_re:breaker_speed",
+			"id": "minecraft:generic.max_health",
 			// 实体id（支持逗号分隔多个，或使用 * 表示所有实体生效）
 			"EntityID": "minecraft:zombie",
 			// 语言
-			"lang": "endofdays_re.attribute.breaker_speed",
+			"lang": "endofdays_re.attribute.max_health",
 			// 属性值或表达式。可用变量: BASE=该属性在原版中的基础值, day=僵尸生成时的天数（生成后固定，不会随时间再变化）。示例: BASE * (1 + day * 0.05)，比如第3天生成，20 * (1 + 3*0.05) = 23
-			"value": "min(2.0, BASE_BREAKER_SPEED * (1 + day * 0.01))",
+			"value": "BASE_HEALTH * (1 + day * 0.05)",
 			// 开始生效天数
 			"start": 1,
 			// 结束生效天数（小于0表示不限制）
@@ -102,6 +84,24 @@
 			"lang": "endofdays_re.attribute.build_speed",
 			// 属性值或表达式。可用变量: BASE=该属性在原版中的基础值, day=僵尸生成时的天数（生成后固定，不会随时间再变化）。示例: BASE * (1 + day * 0.05)，比如第3天生成，20 * (1 + 3*0.05) = 23
 			"value": "max(2.0, BASE_BUILD_SPEED - (day * 0.10))",
+			// 开始生效天数
+			"start": 1,
+			// 结束生效天数（小于0表示不限制）
+			"end": 100,
+			// 属性增益上限值
+			"max": 1024.0
+		},
+		"挖掘速度": {
+			// 键名称
+			"key": null,
+			// 属性ID
+			"id": "endofdays_re:breaker_speed",
+			// 实体id（支持逗号分隔多个，或使用 * 表示所有实体生效）
+			"EntityID": "minecraft:zombie",
+			// 语言
+			"lang": "endofdays_re.attribute.breaker_speed",
+			// 属性值或表达式。可用变量: BASE=该属性在原版中的基础值, day=僵尸生成时的天数（生成后固定，不会随时间再变化）。示例: BASE * (1 + day * 0.05)，比如第3天生成，20 * (1 + 3*0.05) = 23
+			"value": "min(2.0, BASE_BREAKER_SPEED * (1 + day * 0.01))",
 			// 开始生效天数
 			"start": 1,
 			// 结束生效天数（小于0表示不限制）

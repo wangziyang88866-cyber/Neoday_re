@@ -9,9 +9,11 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,18 +21,32 @@ public enum AttributeHelper {
     ;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AttributeHelper.class);
-    private static final ExpressionEvaluatorTool EVAL = new ExpressionEvaluatorTool();
-    private static final String APPLIED_FLAG = ModUtils.KeyWraps("attr_build_applied");
 
-    // 公式里允许出现的合法变量名（其余标识符一律视为拼写错误）
-    private static final java.util.Set<String> KNOWN_VARIABLES = java.util.Set.of("day", "time", "BASE");
-    // 用于扫描公式里的标识符（不含函数名，因为函数后面紧跟左括号，这里简单排除）
-    private static final Pattern IDENTIFIER_PATTERN = Pattern.compile("[a-zA-Z_][a-zA-Z0-9_]*");
+    private static final String APPLIED_FLAG =
+            ModUtils.KeyWraps("attr_build_applied");
+
+    private static final ExpressionEvaluatorTool FUNCTION_CHECKER =
+            new ExpressionEvaluatorTool();
+
+    private static final Set<String> KNOWN_VARIABLES =
+            Set.of("day", "time", "BASE");
+
+    private static final Pattern IDENTIFIER_PATTERN =
+            Pattern.compile("[a-zA-Z_][a-zA-Z0-9_]*");
+
+    /**
+     * 兼容旧版配置中的属性专用基础值变量。
+     * 它们的含义都是“当前正在计算的这个属性的原始基础值”。
+     */
+    private static final Pattern LEGACY_BASE_VARIABLE_PATTERN = Pattern.compile(
+            "\\bBASE_(?:HEALTH|BUILD_SPEED|BREAKER_SPEED|ARMOR|MOVE_SPEED|ATTACK_DAMAGE)\\b"
+    );
 
     public static void apply(LivingEntity entity) {
         if (entity == null || entity.level().isClientSide()) {
             return;
         }
+
         if (entity.getPersistentData().getBoolean(APPLIED_FLAG)) {
             return;
         }
@@ -41,95 +57,198 @@ public enum AttributeHelper {
             return;
         }
 
-        ResourceLocation typeId = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
-        String entityIdStr = typeId.toString();
+        ResourceLocation typeId =
+                BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
 
-        long spawnDay = AllSyncValue.Instance.day;
+        if (typeId == null) {
+            LOGGER.warn("[Attribute] 无法取得实体类型: {}", entity.getClass().getName());
+            return;
+        }
+
+        String entityId = typeId.toString();
+        long day = AllSyncValue.Instance.day;
+        long time = entity.level().getGameTime();
 
         for (var entry : config.attributes.entrySet()) {
+            String key = entry.getKey();
             AttributeBuild.AttributeData data = entry.getValue();
-            if (data == null || data.id == null || data.id.isBlank()) continue;
-            if (!matchesEntity(data.EntityID, entityIdStr)) continue;
-            if (spawnDay < data.start || (data.end >= 0 && spawnDay > data.end)) continue;
 
-            applyOne(entity, entry.getKey(), data, spawnDay);
+            if (data == null || data.id == null || data.id.isBlank()) {
+                continue;
+            }
+
+            if (!matchesEntity(data.EntityID, entityId)) {
+                continue;
+            }
+
+            if (day < data.start || (data.end >= 0 && day > data.end)) {
+                continue;
+            }
+
+            applyOne(entity, entityId, key, data, day, time);
         }
 
         entity.getPersistentData().putBoolean(APPLIED_FLAG, true);
     }
 
-    private static void applyOne(LivingEntity entity, String key, AttributeBuild.AttributeData data, long day) {
+    private static void applyOne(
+            LivingEntity entity,
+            String entityId,
+            String key,
+            AttributeBuild.AttributeData data,
+            long day,
+            long time
+    ) {
+        /*
+         * 1.21.1 NeoForge：这里是 Holder.Reference<Attribute>，
+         * 必须保留 var，不能写成 Attribute。
+         */
         var attribute = ModUtils.getAttribute(data.id);
+
         if (attribute == null) {
-            LOGGER.warn("[Attribute] 未知属性 ID: {} (来自配置项: {})", data.id, key);
+            LOGGER.warn(
+                    "[Attribute] 未知属性 ID，跳过。key={}, entity={}, attribute={}",
+                    key, entityId, data.id
+            );
             return;
         }
 
         AttributeInstance instance = entity.getAttribute(attribute);
+
         if (instance == null) {
+            LOGGER.debug(
+                    "[Attribute] 实体不支持该属性，跳过。key={}, entity={}, attribute={}",
+                    key, entityId, data.id
+            );
             return;
         }
 
-        // 关键：在计算前检查公式里有没有写错的变量名（比如残留的旧版 BASE_HEALTH 这种），
-        // 有的话直接跳过并报警，绝不让它被静默当成 0 去 setBaseValue。
-        String badToken = findUnknownVariable(data.value);
+        String originalFormula = data.value;
+        String formula = normalizeLegacyBaseVariables(originalFormula);
+
+        if (!formula.equals(originalFormula)) {
+            LOGGER.debug(
+                    "[Attribute] 已兼容转换旧公式变量。key={}, oldFormula={}, formula={}",
+                    key, originalFormula, formula
+            );
+        }
+
+        String badToken = findUnknownVariable(formula);
         if (badToken != null) {
-            LOGGER.warn("[Attribute] 配置项 [{}] 的公式里出现无法识别的变量 \"{}\"（公式: {}）。" +
-                            "该表达式默认引擎会把它当作 0 处理，为避免属性被错误清零，本次跳过应用。" +
-                            "请检查是否残留旧版写法（如 BASE_HEALTH），应统一改成 BASE。",
-                    key, badToken, data.value);
+            LOGGER.warn(
+                    "[Attribute] 公式有未知变量，跳过。key={}, entity={}, variable={}, formula={}",
+                    key, entityId, badToken, originalFormula
+            );
             return;
-        }//这是一段屎山代码，如果你不想僵尸一出生就死亡，那么不要尝试删除它
+        }
 
         double baseValue = instance.getBaseValue();
 
-        EVAL.setVariable("day", (double) day);
-        EVAL.setVariable("BASE", baseValue);
+        /*
+         * 每次独立创建，避免共享 evaluator 留下上一只实体的变量。
+         */
+        ExpressionEvaluatorTool evaluator = new ExpressionEvaluatorTool();
+        evaluator.setVariable("day", (double) day);
+        evaluator.setVariable("time", (double) time);
+        evaluator.setVariable("BASE", baseValue);
 
-        double result;
+        final double evaluatedValue;
         try {
-            result = EVAL.evaluate(data.value);
+            evaluatedValue = evaluator.evaluate(formula);
         } catch (Exception e) {
-            LOGGER.warn("[Attribute] 表达式计算失败 [{}]: {} -> {}", key, data.value, e.getMessage());
+            LOGGER.warn(
+                    "[Attribute] 表达式计算失败。key={}, entity={}, attribute={}, BASE={}, day={}, formula={}, error={}",
+                    key, entityId, data.id, baseValue, day, formula, e.getMessage()
+            );
             return;
         }
+
+        if (!Double.isFinite(evaluatedValue)) {
+            LOGGER.error(
+                    "[Attribute] 表达式结果非法，拒绝写入。key={}, entity={}, attribute={}, BASE={}, day={}, formula={}, result={}",
+                    key, entityId, data.id, baseValue, day, formula, evaluatedValue
+            );
+            return;
+        }
+
+        double result = evaluatedValue;
 
         if (data.max > 0) {
             result = Math.min(result, data.max);
         }
+
         result = Math.max(result, 0.0D);
 
-        LOGGER.debug("[Attribute] key={} id={} BASE={} day={} formula={} result={}",
-                key, data.id, baseValue, day, data.value, result);
+        boolean isMaxHealth =
+                attribute.value() == Attributes.MAX_HEALTH.value();
+
+        if (isMaxHealth && result <= 0.0D) {
+            LOGGER.error(
+                    "[Attribute] 最大生命结果 <= 0，拒绝写入以防实体死亡。key={}, entity={}, BASE={}, day={}, formula={}, result={}",
+                    key, entityId, baseValue, day, formula, result
+            );
+            return;
+        }
+
+        LOGGER.debug(
+                "[Attribute] 应用成功。key={}, entity={}, attribute={}, BASE={}, day={}, formula={}, result={}",
+                key, entityId, data.id, baseValue, day, formula, result
+        );
 
         instance.setBaseValue(result);
     }
 
-    /**
-     * 扫描公式里所有标识符，找出第一个既不是已知变量（day/time/BASE）
-     * 也不是已注册函数名（max/min/sqrt/pow等）的标识符。
-     * 找到即说明公式里有拼写错误/残留旧变量名，返回该标识符；全部合法则返回 null。
-     */
+    private static String normalizeLegacyBaseVariables(String formula) {
+        if (formula == null || formula.isBlank()) {
+            return formula;
+        }
+
+        return LEGACY_BASE_VARIABLE_PATTERN
+                .matcher(formula)
+                .replaceAll("BASE");
+    }
+
     private static String findUnknownVariable(String formula) {
-        if (formula == null || formula.isBlank()) return null;
+        if (formula == null || formula.isBlank()) {
+            return null;
+        }
 
         Matcher matcher = IDENTIFIER_PATTERN.matcher(formula);
+
         while (matcher.find()) {
             String token = matcher.group();
-            if (KNOWN_VARIABLES.contains(token)) continue;
-            if (EVAL.containsKey(token)) continue; // 是函数名，比如 max/min/sqrt
+
+            if (KNOWN_VARIABLES.contains(token)) {
+                continue;
+            }
+
+            if (FUNCTION_CHECKER.containsKey(token)) {
+                continue;
+            }
+
             return token;
         }
+
         return null;
     }
 
     private static boolean matchesEntity(String configured, String actual) {
-        if (configured == null || configured.isBlank()) return false;
-        String trimmed = configured.trim();
-        if (trimmed.equals("*")) return true;
-        for (String part : trimmed.split(",")) {
-            if (part.trim().equalsIgnoreCase(actual)) return true;
+        if (configured == null || configured.isBlank()) {
+            return false;
         }
+
+        String trimmed = configured.trim();
+
+        if ("*".equals(trimmed)) {
+            return true;
+        }
+
+        for (String part : trimmed.split(",")) {
+            if (part.trim().equalsIgnoreCase(actual)) {
+                return true;
+            }
+        }
+
         return false;
     }
 }

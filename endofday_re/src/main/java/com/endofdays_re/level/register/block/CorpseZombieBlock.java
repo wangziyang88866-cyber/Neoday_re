@@ -4,7 +4,6 @@ import com.endofdays_re.level.register.RegisterBlockEntityTypes;
 import com.endofdays_re.level.register.entity.block.CorpseZombieBlockEntity;
 import com.endofdays_re.utils.ModUtils;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -65,16 +64,12 @@ public class CorpseZombieBlock extends BaseEntityBlock implements SimpleWaterlog
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        if (Screen.hasShiftDown()) {
-            tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".corpse_zombie.description"));
-            tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".corpse_zombie.ability_1"));
-            tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".corpse_zombie.ability_2"));
-            tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".corpse_zombie.ability_3"));
-            tooltip.add(Component.empty());
-            tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".corpse_zombie.detail"));
-        } else {
-            tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".hold_shift"));
-        }
+        tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".corpse_zombie.description"));
+        tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".corpse_zombie.ability_1"));
+        tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".corpse_zombie.ability_2"));
+        tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".corpse_zombie.ability_3"));
+        tooltip.add(Component.empty());
+        tooltip.add(Component.translatable("tooltip." + ModUtils.MODID + ".corpse_zombie.detail"));
         super.appendHoverText(stack, context, tooltip, flag);
     }
 

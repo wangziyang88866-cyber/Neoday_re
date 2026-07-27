@@ -3,6 +3,8 @@ package com.endofdays_re.event;
 import com.endofdays_re.client.config.ConfigScreenBuild;
 import com.endofdays_re.client.mapping.EodKeyMapping;
 import com.endofdays_re.config.ConfigData;
+import com.endofdays_re.event.helper.DamageParticleHelper;
+import com.endofdays_re.event.helper.HealParticleHelper;
 import com.endofdays_re.utils.tools.Component;
 import com.endofdays_re.utils.tools.MessageTool;
 import net.minecraft.client.Minecraft;
@@ -22,13 +24,27 @@ public enum ClientForgeEvent {
 
     @SubscribeEvent
     public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
-        if (ConfigData.ScreenConfigData.isShowJoin) {
+        if (ConfigData.ScreenConfigData != null && ConfigData.ScreenConfigData.isShowJoin) {
             event.getEntity().sendSystemMessage(Component.translatable("endofdays_re.join.key", new MessageTool.Variable<>("Player", event.getEntity().getDisplayName().getString())));
             event.getEntity().sendSystemMessage(Component.getComponent(""));
             event.getEntity().sendSystemMessage(Component.getComponent(""));
             event.getEntity().sendSystemMessage(Component.translatable("endofdays_re.join.key_buttom", new MessageTool.Variable<>("Player", event.getEntity().getDisplayName().getString())));
             event.getEntity().sendSystemMessage(Component.translatable("endofdays_re.join.key_buttom_1"));
 
+        }
+    }
+
+    @SubscribeEvent
+    public static void onLivingHeal(net.neoforged.neoforge.event.entity.living.LivingHealEvent event) {
+        if (ConfigData.ScreenConfigData != null && ConfigData.ScreenConfigData.showHeal) {
+            HealParticleHelper.spawn(event);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onLivingDamage(net.neoforged.neoforge.event.entity.living.LivingDamageEvent.Post event) {
+        if (ConfigData.ScreenConfigData != null && ConfigData.ScreenConfigData.showDamage) {
+            DamageParticleHelper.spawn(event.getEntity(), event.getSource().getEntity(), event.getSource(), event.getNewDamage());
         }
     }
 

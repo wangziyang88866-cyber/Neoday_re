@@ -4,17 +4,12 @@
   "package": "com.endofdays_re.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "IMobAccessorMixin",
     "IMobEntityMixin",
     "LevelMixin",
     "MobGoalMixin",
     "MobMixinSet",
     "ZombieAIMixin",
     "ZombieArmorMixin"
-  ],
-  "client": [
-    "IbuttonMixin",
-    "ILevelRenderer"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -246,9 +246,6 @@ public enum ServerForgeEvent {
             if (multiplier <= 0) event.setCanceled(true);
             else event.setAmount(event.getAmount() * multiplier);
         }
-        if (ConfigData.ScreenConfigData.showHeal) {
-            HealParticleHelper.spawn(event);
-        }
     }
 
     @SubscribeEvent
@@ -384,11 +381,11 @@ public enum ServerForgeEvent {
          * 必须在实体 tick 后熄火，否则原版 Zombie tick
          * 可能会在 Pre 事件之后重新点燃它。
          */
-        boolean sunImmuneEnabled =
-                isDayEnable("immune_sun")
-                        && ConfigData.enableConfigData.Data
-                        .get("immune_sun_enable")
-                        .enable;
+        var immuneSunConfig = ConfigData.enableConfigData == null ? null
+                : ConfigData.enableConfigData.Data.get("immune_sun_enable");
+        boolean sunImmuneEnabled = isDayEnable("immune_sun")
+                && immuneSunConfig != null
+                && immuneSunConfig.enable;
 
         if (sunImmuneEnabled && zombie.isOnFire()) {
             zombie.clearFire();
@@ -432,18 +429,6 @@ public enum ServerForgeEvent {
 
         if (noReachablePath || targetTooHighOrTooLow) {
             pathGoal.triggerBuildSequence(zombie.getTarget().blockPosition());
-        }
-    }
-
-    @SubscribeEvent
-    public static void onLivingDamage(LivingDamageEvent.Post event) {
-        if (ConfigData.ScreenConfigData.showDamage) {
-            DamageParticleHelper.spawn(
-                    event.getEntity(),
-                    event.getSource().getEntity(), // 攻击者实体
-                    event.getSource(),
-                    event.getNewDamage()
-            );
         }
     }
 

@@ -9,14 +9,6 @@
 			// 默认值
 			"DefaultValue": false
 		},
-		"enable_temp": {
-			// 是否启用
-			"enable": true,
-			// Language 键映射
-			"lang": "endofdays_re.enable.level.enable_temp",
-			// 默认值
-			"DefaultValue": false
-		},
 		"pearls_enable": {
 			// 是否启用
 			"enable": true,
@@ -24,6 +16,14 @@
 			"lang": "endofdays_re.enable.entity.goal.use.pearls",
 			// 默认值
 			"DefaultValue": true
+		},
+		"enable_temp": {
+			// 是否启用
+			"enable": true,
+			// Language 键映射
+			"lang": "endofdays_re.enable.level.enable_temp",
+			// 默认值
+			"DefaultValue": false
 		},
 		"equip_enable": {
 			// 是否启用
@@ -41,14 +41,6 @@
 			// 默认值
 			"DefaultValue": true
 		},
-		"trident_enable": {
-			// 是否启用
-			"enable": true,
-			// Language 键映射
-			"lang": "endofdays_re.enable.entity.use.trident",
-			// 默认值
-			"DefaultValue": true
-		},
 		"entity_climb": {
 			// 是否启用
 			"enable": true,
@@ -57,11 +49,11 @@
 			// 默认值
 			"DefaultValue": false
 		},
-		"entity_drop_enable": {
+		"trident_enable": {
 			// 是否启用
 			"enable": true,
 			// Language 键映射
-			"lang": "endofdays_re.enable.replace.entity.drop",
+			"lang": "endofdays_re.enable.entity.use.trident",
 			// 默认值
 			"DefaultValue": true
 		},
@@ -70,6 +62,14 @@
 			"enable": true,
 			// Language 键映射
 			"lang": "endofdays_re.enable.entity.rebirth",
+			// 默认值
+			"DefaultValue": true
+		},
+		"entity_drop_enable": {
+			// 是否启用
+			"enable": true,
+			// Language 键映射
+			"lang": "endofdays_re.enable.replace.entity.drop",
 			// 默认值
 			"DefaultValue": true
 		},
@@ -97,14 +97,6 @@
 			// 默认值
 			"DefaultValue": true
 		},
-		"fly_enable": {
-			// 是否启用
-			"enable": false,
-			// Language 键映射
-			"lang": "endofdays_re.enable.entity.fly",
-			// 默认值
-			"DefaultValue": false
-		},
 		"jump_enable": {
 			// 是否启用
 			"enable": true,
@@ -112,6 +104,14 @@
 			"lang": "endofdays_re.enable.entity.jump",
 			// 默认值
 			"DefaultValue": true
+		},
+		"fly_enable": {
+			// 是否启用
+			"enable": false,
+			// Language 键映射
+			"lang": "endofdays_re.enable.entity.fly",
+			// 默认值
+			"DefaultValue": false
 		},
 		"break_block_enable": {
 			// 是否启用
@@ -129,13 +129,13 @@
 			// 默认值
 			"DefaultValue": true
 		},
-		"use_potions_enable": {
+		"break_target_block": {
 			// 是否启用
 			"enable": true,
 			// Language 键映射
-			"lang": "endofdays_re.enable.entity.use.potions_enable",
+			"lang": "endofdays_re.enable.use.break_target_block",
 			// 默认值
-			"DefaultValue": true
+			"DefaultValue": false
 		},
 		"follow_enable": {
 			// 是否启用
@@ -145,13 +145,13 @@
 			// 默认值
 			"DefaultValue": true
 		},
-		"break_target_block": {
+		"use_potions_enable": {
 			// 是否启用
 			"enable": true,
 			// Language 键映射
-			"lang": "endofdays_re.enable.use.break_target_block",
+			"lang": "endofdays_re.enable.entity.use.potions_enable",
 			// 默认值
-			"DefaultValue": false
+			"DefaultValue": true
 		},
 		"goal_enable": {
 			// 是否启用
@@ -161,19 +161,19 @@
 			// 默认值
 			"DefaultValue": true
 		},
-		"bow_enable": {
-			// 是否启用
-			"enable": true,
-			// Language 键映射
-			"lang": "endofdays_re.enable.entity.use.bow",
-			// 默认值
-			"DefaultValue": true
-		},
 		"immune_fire": {
 			// 是否启用
 			"enable": true,
 			// Language 键映射
 			"lang": "endofdays_re.enable.entity.immune.lava",
+			// 默认值
+			"DefaultValue": true
+		},
+		"bow_enable": {
+			// 是否启用
+			"enable": true,
+			// Language 键映射
+			"lang": "endofdays_re.enable.entity.use.bow",
 			// 默认值
 			"DefaultValue": true
 		},
@@ -217,6 +217,14 @@
 			// 默认值
 			"DefaultValue": true
 		},
+		"fishing_enable": {
+			// 是否启用
+			"enable": true,
+			// Language 键映射
+			"lang": "endofdays_re.enable.entity.use.fishing",
+			// 默认值
+			"DefaultValue": true
+		},
 		"spawn_tacz_enable": {
 			// 是否启用
 			"enable": true,
@@ -225,11 +233,11 @@
 			// 默认值
 			"DefaultValue": true
 		},
-		"fishing_enable": {
+		"barker_vehicle_enable": {
 			// 是否启用
 			"enable": true,
 			// Language 键映射
-			"lang": "endofdays_re.enable.entity.use.fishing",
+			"lang": "endofdays_re.enable.entity.bark.barker_vehicle_enable",
 			// 默认值
 			"DefaultValue": true
 		},
@@ -240,14 +248,6 @@
 			"lang": "endofdays_re.enable.use.picked_target_container",
 			// 默认值
 			"DefaultValue": false
-		},
-		"barker_vehicle_enable": {
-			// 是否启用
-			"enable": true,
-			// Language 键映射
-			"lang": "endofdays_re.enable.entity.bark.barker_vehicle_enable",
-			// 默认值
-			"DefaultValue": true
 		},
 		"gigantic_enable": {
 			// 是否启用

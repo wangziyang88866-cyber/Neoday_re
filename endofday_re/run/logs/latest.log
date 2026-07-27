@@ -1,117 +1,124 @@
-[267月2026 20:15:07.464] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientdev, --version, 21.1.236, --assetIndex, 17, --assetsDir, /Users/wangziyang/.gradle/caches/neoformruntime/assets, --gameDir, ., --fml.fmlVersion, 4.0.43, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.236, --fml.neoFormVersion, 20240808.144430]
-[267月2026 20:15:07.465] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.10+7-LTS
-[267月2026 20:15:07.466] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.10 by Eclipse Adoptium; OS Mac OS X arch aarch64 version 26.3.1
-[267月2026 20:15:07.513] [main/INFO] [Sodium-GraphicsAdapterProbe/]: Searching for graphics cards...
-[267月2026 20:15:07.515] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[267月2026 20:15:07.656] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[267月2026 20:15:07.723] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.5
-[267月2026 20:15:07.732] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.4
-[267月2026 20:15:07.740] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.3
-[267月2026 20:15:07.748] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.2
-[267月2026 20:15:07.756] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.1
-[267月2026 20:15:07.775] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.1 got version 4.1
-[267月2026 20:15:07.882] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/Users/wangziyang/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar%23132!/ Service=ModLauncher Env=CLIENT
-[267月2026 20:15:07.954] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: Apple M4 GL version 4.1 Metal - 90.5, Apple
-[267月2026 20:15:08.147] [main/WARN] [net.neoforged.jarjar.selection.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: fabric_rendering_data_attachment_v1. Using Mod File: 
-[267月2026 20:15:08.147] [main/WARN] [net.neoforged.jarjar.selection.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: fabric_renderer_api_v1. Using Mod File: 
-[267月2026 20:15:08.147] [main/WARN] [net.neoforged.jarjar.selection.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: fabric_api_base. Using Mod File: 
-[267月2026 20:15:08.147] [main/WARN] [net.neoforged.jarjar.selection.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: fabric_block_view_api_v2. Using Mod File: 
-[267月2026 20:15:08.147] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 8 dependencies adding them to mods collection
-[267月2026 20:15:08.148] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
+[277月2026 12:46:29.013] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserverdev, --gameDir, ., --fml.fmlVersion, 4.0.43, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.236, --fml.neoFormVersion, 20240808.144430, --nogui]
+[277月2026 12:46:29.014] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.10+7-LTS
+[277月2026 12:46:29.014] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.10 by Eclipse Adoptium; OS Mac OS X arch aarch64 version 26.3.1
+[277月2026 12:46:29.054] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserverdev
+[277月2026 12:46:29.072] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/Users/wangziyang/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar%2394!/ Service=ModLauncher Env=SERVER
+[277月2026 12:46:29.237] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 6 dependencies adding them to mods collection
+[277月2026 12:46:29.237] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
      Mod List:
 		Name Version (Mod Id)
 
 		Avaritia 1.3.1 (avaritia)
 		Cloth Config v15 API 15.0.140 (cloth_config)
 		endofdays_re 1.7.6 (endofdays_re)
-		Forgified Fabric API Base 0.4.42+d1308ded19 (fabric_api_base)
-		Forgified Fabric BlockView API (v2) 1.0.10+9afaaf8c19 (fabric_block_view_api_v2)
-		Forgified Fabric Renderer API (v1) 3.4.1+9125b6dc19 (fabric_renderer_api_v1)
-		Forgified Fabric Rendering Data Attachment (v1) 0.3.48+73761d2e19 (fabric_rendering_data_attachment_v1)
-		Iris 1.8.14-beta.1+mc1.21.1 (iris)
 		Jade 15.10.5+neoforge (jade)
 		Just Enough Items 19.27.0.340 (jei)
 		Minecraft 1.21.1 (minecraft)
 		NeoForge 21.1.236 (neoforge)
-		Sodium 0.8.12+mc1.21.1 (sodium)
 		Timeless & Classics Guns: Zero 1.1.7-r2 (tacz)
-[267月2026 20:15:08.600] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
-[267月2026 20:15:08.618] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientdev' with arguments [--version, 21.1.236, --gameDir, ., --assetsDir, /Users/wangziyang/.gradle/caches/neoformruntime/assets, --assetIndex, 17]
-[267月2026 20:15:08.642] [main/WARN] [mixin/]: Reference map 'iris.refmap.json' for mixins.iris.json could not be read. If this is a development environment you can ignore this message
-[267月2026 20:15:08.643] [main/WARN] [mixin/]: Reference map 'iris.refmap.json' for mixins.iris.fantastic.json could not be read. If this is a development environment you can ignore this message
-[267月2026 20:15:08.643] [main/WARN] [mixin/]: Reference map 'iris.refmap.json' for mixins.iris.vertexformat.json could not be read. If this is a development environment you can ignore this message
-[267月2026 20:15:08.644] [main/WARN] [mixin/]: Reference map 'iris.refmap.json' for iris-batched-entity-rendering.mixins.json could not be read. If this is a development environment you can ignore this message
-[267月2026 20:15:08.644] [main/WARN] [mixin/]: Reference map 'iris.refmap.json' for mixins.iris.compat.sodium.json could not be read. If this is a development environment you can ignore this message
-[267月2026 20:15:08.645] [main/WARN] [mixin/]: Reference map 'mixins.avaritia.refmap.json' for avaritia.mixins.json could not be read. If this is a development environment you can ignore this message
-[267月2026 20:15:08.646] [main/WARN] [mixin/]: Reference map 'mixins.avaritia.refmap.json' for avaritia.iris.mixins.json could not be read. If this is a development environment you can ignore this message
-[267月2026 20:15:08.665] [main/INFO] [Sodium/]: Loaded configuration file for Sodium: 45 options available, 1 override(s) found
-[267月2026 20:15:08.666] [main/WARN] [mixin/]: Reference map 'tacz.refmap.json' for tacz.mixins.json could not be read. If this is a development environment you can ignore this message
-[267月2026 20:15:08.841] [main/WARN] [mixin/]: Error loading class: com/portingdeadmods/cable_facades/events/GameClientEvents$2 (java.lang.ClassNotFoundException: com.portingdeadmods.cable_facades.events.GameClientEvents$2)
-[267月2026 20:15:08.841] [main/WARN] [mixin/]: Error loading class: com/direwolf20/justdirethings/client/renderers/OurRenderTypes (java.lang.ClassNotFoundException: com.direwolf20.justdirethings.client.renderers.OurRenderTypes)
-[267月2026 20:15:08.841] [main/WARN] [mixin/]: Error loading class: mekanism/client/render/entity/RenderFlame (java.lang.ClassNotFoundException: mekanism.client.render.entity.RenderFlame)
-[267月2026 20:15:08.842] [main/WARN] [mixin/]: Error loading class: mekanism/client/render/armor/MekaSuitArmor (java.lang.ClassNotFoundException: mekanism.client.render.armor.MekaSuitArmor)
-[267月2026 20:15:08.842] [main/WARN] [mixin/]: Error loading class: mekanism/client/render/lib/effect/BillboardingEffectRenderer (java.lang.ClassNotFoundException: mekanism.client.render.lib.effect.BillboardingEffectRenderer)
-[267月2026 20:15:08.843] [main/WARN] [mixin/]: Error loading class: blusunrize/immersiveengineering/client/utils/IEGLShaders (java.lang.ClassNotFoundException: blusunrize.immersiveengineering.client.utils.IEGLShaders)
-[267月2026 20:15:08.901] [main/WARN] [Sodium/]: Force-disabling mixin 'features.render.world.sky.ClientLevelMixin' as rule 'mixin.features.render.world.sky' (added by mods [iris]) disables it and children
-[267月2026 20:15:08.901] [main/WARN] [Sodium/]: Force-disabling mixin 'features.render.world.sky.FogRendererMixin' as rule 'mixin.features.render.world.sky' (added by mods [iris]) disables it and children
-[267月2026 20:15:08.901] [main/WARN] [Sodium/]: Force-disabling mixin 'features.render.world.sky.LevelRendererMixin' as rule 'mixin.features.render.world.sky' (added by mods [iris]) disables it and children
-[267月2026 20:15:08.922] [main/WARN] [mixin/]: Error loading class: com/mrcrayfish/controllable/client/binding/context/BindingContext (java.lang.ClassNotFoundException: com.mrcrayfish.controllable.client.binding.context.BindingContext)
-[267月2026 20:15:08.968] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
-[267月2026 20:15:09.602] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 229 Datafixer optimizations took 116 milliseconds
-[267月2026 20:15:11.998] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[267月2026 20:15:11.999] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[267月2026 20:15:12.000] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[267月2026 20:15:12.000] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[267月2026 20:15:12.001] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[267月2026 20:15:12.067] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/Users/wangziyang/Downloads/备份/endofday_re-main%202/endofday_re/build/moddev/artifacts/neoforge-21.1.236.jar%23190!/assets/.mcassetsroot' uses unexpected schema
-[267月2026 20:15:12.067] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/Users/wangziyang/Downloads/备份/endofday_re-main%202/endofday_re/build/moddev/artifacts/neoforge-21.1.236.jar%23190!/data/.mcassetsroot' uses unexpected schema
-[267月2026 20:15:12.075] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[267月2026 20:15:12.078] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[267月2026 20:15:12.114] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.3+5
-[267月2026 20:15:12.141] [Render thread/INFO] [com.mojang.blaze3d.platform.Window/]: OpenGL Vendor: Apple
-[267月2026 20:15:12.141] [Render thread/INFO] [com.mojang.blaze3d.platform.Window/]: OpenGL Renderer: Apple M4
-[267月2026 20:15:12.141] [Render thread/INFO] [com.mojang.blaze3d.platform.Window/]: OpenGL Version: 4.1 Metal - 90.5
-[267月2026 20:15:12.331] [Render thread/INFO] [Iris/]: Debug functionality is disabled.
-[267月2026 20:15:12.332] [Render thread/INFO] [Iris/]: DSA support not detected.
-[267月2026 20:15:12.349] [Render thread/INFO] [Iris/]: Shaders are disabled because enableShaders is set to false in iris.properties
-[267月2026 20:15:12.392] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.236, for MC 1.21.1
-[267月2026 20:15:12.418] [ForkJoinPool.commonPool-worker-4/WARN] [Iris/]: [Iris Update Check] This version doesn't have an update index, skipping.
-[267月2026 20:15:12.531] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[267月2026 20:15:12.532] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 1.026 milliseconds
-[267月2026 20:15:12.662] [modloading-sync-worker/ERROR] [net.minecraft.Util/]: Entity endofdays_re:flying_entity has no attributes
-[267月2026 20:15:16.045] [Render thread/INFO] [tacz/GunPackFinder]: Start scanning for gun packs in /Users/wangziyang/Downloads/备份/endofday_re-main 2/endofday_re/run/tacz
-[267月2026 20:15:16.047] [Render thread/INFO] [tacz/GunPackFinder]: - tacz_default_gun, Main namespace: tacz
-[267月2026 20:15:16.047] [Render thread/INFO] [tacz/GunPackFinder]: Found 1 possible gunpack(s) and added them to resource set.
-[267月2026 20:15:16.301] [Render thread/INFO] [Iris/]: Hardware information:
-[267月2026 20:15:16.301] [Render thread/INFO] [Iris/]: CPU: 10x Apple M4
-[267月2026 20:15:16.301] [Render thread/INFO] [Iris/]: GPU: Apple M4 (Supports OpenGL 4.1 Metal - 90.5)
-[267月2026 20:15:16.301] [Render thread/INFO] [Iris/]: OS: Mac OS X (26.3.1)
-[267月2026 20:15:16.359] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: [endofdays_re]
-[267月2026 20:15:17.017] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: tacz_resources, vanilla, mod_resources, mod/sodium, mod/iris, mod/fabric_api_base, mod/fabric_renderer_api_v1, mod/avaritia, mod/jade, mod/endofdays_re, mod/jei, mod/fabric_rendering_data_attachment_v1, mod/tacz, mod/cloth_config, mod/neoforge, mod/fabric_block_view_api_v2
-[267月2026 20:15:17.070] [Worker-Main-7/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.05.hex, loading
-[267月2026 20:15:17.082] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
-[267月2026 20:15:17.103] [Render thread/ERROR] [net.minecraft.client.Minecraft/]: Shutdown failure!
-java.util.ConcurrentModificationException: null
-	at java.base/java.util.HashMap.forEach(HashMap.java:1432) ~[?:?]
-	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.renderer.texture.TextureManager.close(TextureManager.java:167) ~[neoforge-21.1.236.jar%23190!/:?]
-	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.close(Minecraft.java:1128) ~[neoforge-21.1.236.jar%23190!/:?]
-	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.destroy(Minecraft.java:1100) ~[neoforge-21.1.236.jar%23190!/:?]
-	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:236) ~[neoforge-21.1.236.jar%23190!/:?]
+[277月2026 12:46:29.512] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[277月2026 12:46:29.513] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
+[277月2026 12:46:29.518] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserverdev' with arguments [--gameDir, ., --nogui]
+[277月2026 12:46:29.536] [main/WARN] [mixin/]: Reference map 'tacz.refmap.json' for tacz.mixins.json could not be read. If this is a development environment you can ignore this message
+[277月2026 12:46:29.536] [main/WARN] [mixin/]: Reference map 'mixins.avaritia.refmap.json' for avaritia.mixins.json could not be read. If this is a development environment you can ignore this message
+[277月2026 12:46:29.537] [main/WARN] [mixin/]: Reference map 'mixins.avaritia.refmap.json' for avaritia.iris.mixins.json could not be read. If this is a development environment you can ignore this message
+[277月2026 12:46:29.570] [main/WARN] [mixin/]: Error loading class: com/mrcrayfish/controllable/client/binding/context/BindingContext (java.lang.ClassNotFoundException: com.mrcrayfish.controllable.client.binding.context.BindingContext)
+[277月2026 12:46:29.600] [main/ERROR] [net.neoforged.fml.common.asm.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/renderer/entity/ItemRenderer for invalid dist DEDICATED_SERVER
+[277月2026 12:46:29.600] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/renderer/entity/ItemRenderer (java.lang.RuntimeException: Attempted to load class net/minecraft/client/renderer/entity/ItemRenderer for invalid dist DEDICATED_SERVER)
+[277月2026 12:46:29.600] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.renderer.entity.ItemRenderer was not found avaritia.mixins.json:MixinItemRenderer from mod avaritia
+[277月2026 12:46:30.228] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[277月2026 12:46:32.609] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[277月2026 12:46:32.610] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[277月2026 12:46:32.611] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[277月2026 12:46:32.612] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[277月2026 12:46:32.612] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[277月2026 12:46:32.637] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.236, for MC 1.21.1
+[277月2026 12:46:32.753] [modloading-sync-worker/ERROR] [net.minecraft.Util/]: Entity endofdays_re:flying_entity has no attributes
+[277月2026 12:46:32.832] [modloading-sync-worker/INFO] [tacz/SYNCED_ENTITY_DATA_TAC_COPY]: Registered synced data key tacz:shoot_cool_down for minecraft:living_entity
+[277月2026 12:46:32.832] [modloading-sync-worker/INFO] [tacz/SYNCED_ENTITY_DATA_TAC_COPY]: Registered synced data key tacz:melee_cool_down for minecraft:living_entity
+[277月2026 12:46:32.832] [modloading-sync-worker/INFO] [tacz/SYNCED_ENTITY_DATA_TAC_COPY]: Registered synced data key tacz:reload_state for minecraft:living_entity
+[277月2026 12:46:32.832] [modloading-sync-worker/INFO] [tacz/SYNCED_ENTITY_DATA_TAC_COPY]: Registered synced data key tacz:aiming_progress for minecraft:living_entity
+[277月2026 12:46:32.832] [modloading-sync-worker/INFO] [tacz/SYNCED_ENTITY_DATA_TAC_COPY]: Registered synced data key tacz:draw_cool_down for minecraft:living_entity
+[277月2026 12:46:32.832] [modloading-sync-worker/INFO] [tacz/SYNCED_ENTITY_DATA_TAC_COPY]: Registered synced data key tacz:is_aiming for minecraft:living_entity
+[277月2026 12:46:32.832] [modloading-sync-worker/INFO] [tacz/SYNCED_ENTITY_DATA_TAC_COPY]: Registered synced data key tacz:sprint_time for minecraft:living_entity
+[277月2026 12:46:32.832] [modloading-sync-worker/INFO] [tacz/SYNCED_ENTITY_DATA_TAC_COPY]: Registered synced data key tacz:is_bolting for minecraft:living_entity
+[277月2026 12:46:32.832] [modloading-sync-worker/INFO] [tacz/SYNCED_ENTITY_DATA_TAC_COPY]: Registered synced data key tacz:throwable_using for minecraft:living_entity
+[277月2026 12:46:32.851] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from net.byAqua3.avaritia.compat.jade.AvaritiaJadePlugin
+[277月2026 12:46:32.855] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from net.byAqua3.avaritia.compat.jade.AvaritiaJadePlugin in 3.999 ms
+[277月2026 12:46:32.855] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.vanilla.VanillaPlugin
+[277月2026 12:46:32.867] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.vanilla.VanillaPlugin in 11.07 ms
+[277月2026 12:46:32.867] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.universal.UniversalPlugin
+[277月2026 12:46:32.869] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.universal.UniversalPlugin in 1.178 ms
+[277月2026 12:46:32.869] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.debug.DebugPlugin
+[277月2026 12:46:32.869] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.debug.DebugPlugin in 2.917 μs
+[277月2026 12:46:32.869] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.core.CorePlugin
+[277月2026 12:46:32.869] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.core.CorePlugin in 10.46 μs
+[277月2026 12:46:32.869] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.access.AccessibilityPlugin
+[277月2026 12:46:32.869] [modloading-worker-0/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.access.AccessibilityPlugin in 1.625 μs
+[277月2026 12:46:32.920] [main/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[277月2026 12:46:32.958] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/Users/wangziyang/Downloads/备份/endofday_re-main%202/endofday_re/build/moddev/artifacts/neoforge-21.1.236.jar%23128!/assets/.mcassetsroot' uses unexpected schema
+[277月2026 12:46:32.959] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/Users/wangziyang/Downloads/备份/endofday_re-main%202/endofday_re/build/moddev/artifacts/neoforge-21.1.236.jar%23128!/data/.mcassetsroot' uses unexpected schema
+[277月2026 12:46:35.925] [main/INFO] [tacz/GunPackFinder]: Start scanning for gun packs in /Users/wangziyang/Downloads/备份/endofday_re-main 2/endofday_re/run/tacz
+[277月2026 12:46:35.927] [main/INFO] [tacz/GunPackFinder]: - tacz_default_gun, Main namespace: tacz
+[277月2026 12:46:35.927] [main/INFO] [tacz/GunPackFinder]: Found 1 possible gunpack(s) and added them to resource set.
+[277月2026 12:46:36.241] [main/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe endofdays_re:quicksand_bucket
+com.google.gson.JsonParseException: Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: endofdays_re:quicksand_bucket_block
+	at MC-BOOTSTRAP/datafixerupper@8.0.16/com.mojang.serialization.DataResult$Error.getOrThrow(DataResult.java:287) ~[datafixerupper-8.0.16.jar%2379!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:60) ~[neoforge-21.1.236.jar%23128!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:36) ~[neoforge-21.1.236.jar%23128!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[neoforge-21.1.236.jar%23128!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:86) ~[neoforge-21.1.236.jar%23128!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.Util.blockUntilDone(Util.java:872) ~[neoforge-21.1.236.jar%23128!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.Util.blockUntilDone(Util.java:861) ~[neoforge-21.1.236.jar%23128!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.Main.main(Main.java:204) ~[neoforge-21.1.236.jar%23128!/:?]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
-	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.43.jar%23140!/:4.0]
-	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.43.jar%23140!/:4.0]
-	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.NeoForgeClientDevLaunchHandler.runService(NeoForgeClientDevLaunchHandler.java:23) ~[loader-4.0.43.jar%23140!/:4.0]
-	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.43.jar%23140!/:4.0]
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%23122!/:?]
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%23122!/:?]
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%23122!/:?]
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%23122!/:?]
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%23122!/:?]
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%23122!/:?]
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%23122!/:?]
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.43.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:128) ~[loader-4.0.43.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.NeoForgeServerDevLaunchHandler.runService(NeoForgeServerDevLaunchHandler.java:23) ~[loader-4.0.43.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.43.jar%23102!/:4.0]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2382!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2382!/:?]
 	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
 	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?]
+[277月2026 12:46:36.246] [main/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 1510 recipes
+[277月2026 12:46:36.320] [main/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1418 advancements
+[277月2026 12:46:36.332] [main/INFO] [net.byAqua3.avaritia.Avaritia/]: Loaded 0 singularities took 4ms
+[277月2026 12:46:36.616] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting minecraft server version 1.21.1
+[277月2026 12:46:36.616] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Loading properties
+[277月2026 12:46:36.616] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Default game type: SURVIVAL
+[277月2026 12:46:36.616] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[277月2026 12:46:36.672] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting Minecraft server on *:25565
+[277月2026 12:46:36.684] [Server thread/INFO] [net.minecraft.server.network.ServerConnectionListener/]: Using default channel type
+[277月2026 12:46:36.700] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[277月2026 12:46:36.700] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: The server will make no attempt to authenticate usernames. Beware.
+[277月2026 12:46:36.700] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[277月2026 12:46:36.700] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: To change this, set "online-mode" to "true" in the server.properties file.
+[277月2026 12:46:36.715] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Preparing level "world"
+[277月2026 12:46:37.343] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[277月2026 12:46:37.465] [worldgen/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[277月2026 12:46:37.501] [Server thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 158 ms
+[277月2026 12:46:37.501] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (0.797s)! For help, type "help"
+[277月2026 12:46:37.509] [LanServerPinger #1/WARN] [net.minecraft.client.server.LanServerPinger/]: LanServerPinger: No route to host
+[277月2026 12:46:37.521] [Server thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: [endofdays_re]
+[277月2026 12:46:37.524] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[277月2026 12:46:53.925] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[277月2026 12:46:53.926] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[277月2026 12:46:53.927] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[277月2026 12:46:53.953] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[277月2026 12:46:54.000] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[277月2026 12:46:54.011] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[277月2026 12:46:54.021] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[277月2026 12:46:54.021] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[277月2026 12:46:54.021] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[277月2026 12:46:54.021] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved

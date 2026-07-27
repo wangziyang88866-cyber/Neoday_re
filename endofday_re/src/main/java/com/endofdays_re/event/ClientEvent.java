@@ -9,6 +9,7 @@ import com.endofdays_re.client.render.hud.ScreenLabelHud;
 import com.endofdays_re.client.render.hud.TabTitle;
 import com.endofdays_re.client.render.level.OverWorldRender;
 import com.endofdays_re.compat.oculus.shader.ModShaders;
+import com.endofdays_re.config.ConfigData;
 import com.endofdays_re.event.data.AllSyncValue;
 import com.endofdays_re.level.register.RegisterEntity;
 import com.endofdays_re.level.register.RegistryParticles;
@@ -41,13 +42,14 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.util.Optional;
 
-@EventBusSubscriber(value = Dist.CLIENT)
+@EventBusSubscriber(value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public enum ClientEvent {
     ;
 
@@ -55,6 +57,22 @@ public enum ClientEvent {
     @SubscribeEvent
     public static void onLoadComplete(FMLClientSetupEvent event) {
         ConfigScreenBuild.loadGui();
+
+        if (ModUtils.isloadMod("tacz")) {
+            event.enqueueWork(() -> {
+                try {
+                    Class<?> clazz = Class.forName("com.tacz.guns.api.client.other.ThirdPersonManager");
+                    clazz.getMethod("registerDefault").invoke(null);
+                } catch (ReflectiveOperationException exception) {
+                    ModUtils.warn("Failed to register TACZ third-person animations", exception);
+                }
+            });
+            try {
+                NeoForge.EVENT_BUS.register(Class.forName("com.endofdays_re.event.GunHurtEvent"));
+            } catch (ClassNotFoundException exception) {
+                ModUtils.warn("TACZ client event class is missing", exception);
+            }
+        }
     }
 
     @SubscribeEvent

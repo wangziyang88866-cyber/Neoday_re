@@ -39,18 +39,6 @@
 		}
 	},
 	"commonFloat": {
-		"spawn_trident_zombie": {
-			// 值
-			"value": 250.0,
-			// 最小值
-			"min_value": 1.0,
-			// 最大值
-			"max_value": 1000.0,
-			// Language 键映射
-			"lang": "endofdays_re.common.spawner.probability.trident_zombie",
-			// 默认值
-			"DefaultValue": 0.25
-		},
 		"spawn_tnt_zombie": {
 			// 值
 			"value": 0.0,
@@ -60,6 +48,18 @@
 			"max_value": 1000.0,
 			// Language 键映射
 			"lang": "endofdays_re.common.spawner.probability.tnt_zombie",
+			// 默认值
+			"DefaultValue": 0.25
+		},
+		"spawn_trident_zombie": {
+			// 值
+			"value": 250.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.spawner.probability.trident_zombie",
 			// 默认值
 			"DefaultValue": 0.25
 		},
@@ -87,17 +87,17 @@
 			// 默认值
 			"DefaultValue": 0.5
 		},
-		"spawn_dispenser_zombie": {
+		"place_block_zombie_spawn": {
 			// 值
-			"value": 270.0,
+			"value": 300.0,
 			// 最小值
 			"min_value": 1.0,
 			// 最大值
 			"max_value": 1000.0,
 			// Language 键映射
-			"lang": "endofdays_re.common.spawner.dispenser",
+			"lang": "endofdays_re.common.spawner.place_block_zombie",
 			// 默认值
-			"DefaultValue": 0.44999998807907104
+			"DefaultValue": 0.5
 		},
 		"spawn_tacz_zombie": {
 			// 值
@@ -111,17 +111,17 @@
 			// 默认值
 			"DefaultValue": 0.44999998807907104
 		},
-		"place_block_zombie_spawn": {
+		"spawn_dispenser_zombie": {
 			// 值
-			"value": 300.0,
+			"value": 270.0,
 			// 最小值
 			"min_value": 1.0,
 			// 最大值
 			"max_value": 1000.0,
 			// Language 键映射
-			"lang": "endofdays_re.common.spawner.place_block_zombie",
+			"lang": "endofdays_re.common.spawner.dispenser",
 			// 默认值
-			"DefaultValue": 0.5
+			"DefaultValue": 0.44999998807907104
 		},
 		"spawn_zombie_pearls": {
 			// 值
@@ -183,18 +183,6 @@
 			// 默认值
 			"DefaultValue": 0.44999998807907104
 		},
-		"use_fishing": {
-			// 值
-			"value": 250.0,
-			// 最小值
-			"min_value": 1.0,
-			// 最大值
-			"max_value": 1000.0,
-			// Language 键映射
-			"lang": "endofdays_re.common.use.probability.fishing",
-			// 默认值
-			"DefaultValue": 0.25
-		},
 		"spawn_bow_zombie": {
 			// 值
 			"value": 250.0,
@@ -204,6 +192,18 @@
 			"max_value": 1000.0,
 			// Language 键映射
 			"lang": "endofdays_re.common.spawner.probability.bow_zombie",
+			// 默认值
+			"DefaultValue": 0.25
+		},
+		"use_fishing": {
+			// 值
+			"value": 250.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.use.probability.fishing",
 			// 默认值
 			"DefaultValue": 0.25
 		},
@@ -231,18 +231,6 @@
 			// 默认值
 			"DefaultValue": 0.5
 		},
-		"use_shield": {
-			// 值
-			"value": 290.0,
-			// 最小值
-			"min_value": 1.0,
-			// 最大值
-			"max_value": 1000.0,
-			// Language 键映射
-			"lang": "endofdays_re.common.use.probability.shield",
-			// 默认值
-			"DefaultValue": 0.28999999165534973
-		},
 		"spawn_break_zombie": {
 			// 值
 			"value": 300.0,
@@ -254,6 +242,18 @@
 			"lang": "endofdays_re.common.spawner.break",
 			// 默认值
 			"DefaultValue": 0.44999998807907104
+		},
+		"use_shield": {
+			// 值
+			"value": 290.0,
+			// 最小值
+			"min_value": 1.0,
+			// 最大值
+			"max_value": 1000.0,
+			// Language 键映射
+			"lang": "endofdays_re.common.use.probability.shield",
+			// 默认值
+			"DefaultValue": 0.28999999165534973
 		},
 		"use_trident": {
 			// 值
@@ -308,28 +308,28 @@
 	// 僵尸偷盗配置 container前缀为可偷盗的容器,items前缀为可偷盗的物品,regex前缀为正则表达式
 	"EquipChestMob": {
 		"所有箱子": "container:regex:^minecraft:.*chest$",
-		"金苹果": "items:minecraft:golden_apple",
-		"所有护甲": "items:regex:^minecraft:.*_(helmet|chestplate|leggings|boots)$",
 		"不死图腾": "items:minecraft:totem_of_undying",
+		"所有护甲": "items:regex:^minecraft:.*_(helmet|chestplate|leggings|boots)$",
+		"金苹果": "items:minecraft:golden_apple",
 		"附魔金苹果": "items:minecraft:enchanted_golden_apple"
 	},
 	// Tacz枪械配置
 	"taczData": {
-		"m700": {
+		"m95": {
 			// 枪械id
-			"id": "m700",
+			"id": "m95",
 			// 射击模式
 			"FireMode": "SEMI",
 			// 需要弹药?
 			"AmmoInBarrel": false,
 			// 生成权重
-			"weight": 25,
+			"weight": 10,
 			// 攻击半径
-			"radius": 40,
+			"radius": 55,
 			// 移动速度
-			"move_sped": 0.8999999761581421,
+			"move_sped": 0.699999988079071,
 			// 攻击间隔
-			"attadk_speed": 45
+			"attadk_speed": 85
 		},
 		"ak47": {
 			// 枪械id
@@ -347,21 +347,21 @@
 			// 攻击间隔
 			"attadk_speed": 12
 		},
-		"m95": {
+		"m700": {
 			// 枪械id
-			"id": "m95",
+			"id": "m700",
 			// 射击模式
 			"FireMode": "SEMI",
 			// 需要弹药?
 			"AmmoInBarrel": false,
 			// 生成权重
-			"weight": 10,
+			"weight": 25,
 			// 攻击半径
-			"radius": 55,
+			"radius": 40,
 			// 移动速度
-			"move_sped": 0.699999988079071,
+			"move_sped": 0.8999999761581421,
 			// 攻击间隔
-			"attadk_speed": 85
+			"attadk_speed": 45
 		},
 		"deagle": {
 			// 枪械id

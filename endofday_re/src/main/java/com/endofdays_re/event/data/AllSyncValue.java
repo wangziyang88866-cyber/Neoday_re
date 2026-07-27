@@ -12,7 +12,8 @@ public class AllSyncValue {
     public boolean isDay;
     public double BProbability;
     public ModeEventType nextNightMode = ModeEventType.NONE;
-    public float temperature = ConfigData.commonConfigData.temperature;
+    // 配置会在 FMLCommonSetupEvent 才加载；不能在静态实例构造期间读取它。
+    public float temperature;
     public int lastBloodMoonDay;
     public long lastTotalTick;
 

@@ -3,6 +3,24 @@
 	"ArrmorSpawnMax": 4,
 	// 僵尸盔甲生成配置
 	"Arrmor": {
+		"钻石头": {
+			// 盔甲ID
+			"id": "minecraft:diamond_helmet",
+			// 盔甲生成可能性
+			"chance": 0.05,
+			// 应该携带附魔
+			"enchanted": true,
+			// 附魔配置表
+			"enchantes": [],
+			// 标签
+			"tag": "{}",
+			// 插槽名称
+			"slot": "HEAD",
+			// 配置什么时候启用 基于天数时间
+			"day": 45,
+			// 配置什么时候结束使用 基于天数时间
+			"end_day": 100
+		},
 		"铁头": {
 			// 盔甲ID
 			"id": "minecraft:iron_helmet",
@@ -47,24 +65,6 @@
 			"day": 20,
 			// 配置什么时候结束使用 基于天数时间
 			"end_day": 80
-		},
-		"钻石头": {
-			// 盔甲ID
-			"id": "minecraft:diamond_helmet",
-			// 盔甲生成可能性
-			"chance": 0.05,
-			// 应该携带附魔
-			"enchanted": true,
-			// 附魔配置表
-			"enchantes": [],
-			// 标签
-			"tag": "{}",
-			// 插槽名称
-			"slot": "HEAD",
-			// 配置什么时候启用 基于天数时间
-			"day": 45,
-			// 配置什么时候结束使用 基于天数时间
-			"end_day": 100
 		},
 		"铁裤子": {
 			// 盔甲ID
@@ -166,24 +166,6 @@
 			// 配置什么时候结束使用 基于天数时间
 			"end_day": 120
 		},
-		"钻石胸甲": {
-			// 盔甲ID
-			"id": "minecraft:diamond_chestplate",
-			// 盔甲生成可能性
-			"chance": 0.03,
-			// 应该携带附魔
-			"enchanted": true,
-			// 附魔配置表
-			"enchantes": [],
-			// 标签
-			"tag": "{}",
-			// 插槽名称
-			"slot": "CHEST",
-			// 配置什么时候启用 基于天数时间
-			"day": 80,
-			// 配置什么时候结束使用 基于天数时间
-			"end_day": 150
-		},
 		"铁靴子": {
 			// 盔甲ID
 			"id": "minecraft:iron_boots",
@@ -215,6 +197,24 @@
 			"day": 20,
 			// 配置什么时候结束使用 基于天数时间
 			"end_day": 80
+		},
+		"钻石胸甲": {
+			// 盔甲ID
+			"id": "minecraft:diamond_chestplate",
+			// 盔甲生成可能性
+			"chance": 0.03,
+			// 应该携带附魔
+			"enchanted": true,
+			// 附魔配置表
+			"enchantes": [],
+			// 标签
+			"tag": "{}",
+			// 插槽名称
+			"slot": "CHEST",
+			// 配置什么时候启用 基于天数时间
+			"day": 80,
+			// 配置什么时候结束使用 基于天数时间
+			"end_day": 150
 		}
 	}
 }

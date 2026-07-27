@@ -92,6 +92,7 @@ public class FollowBreakBlockBehavior extends Behavior<Mob> {
         }
 
         // 扫描冷却
+        if (ConfigData.commonConfigData == null) return false;
         long gameTime = level.getGameTime();
         int scanInterval = ConfigData.commonConfigData.follow_block_scan_interval * 20;
         if (gameTime - lastScanTime < scanInterval) return false;

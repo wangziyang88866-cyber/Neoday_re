@@ -148,7 +148,12 @@ public enum InvasionHelper {
             }
         }
         for (InvasionBuild.AttributeSetting attr : config.attributeSetting) {
-            AttributeInstance inst = entity.getAttribute(ModUtils.getAttribute(attr.id));
+            var attribute = ModUtils.getAttribute(attr.id);
+            if (attribute == null) {
+                ModUtils.warn("Skipping unknown invasion attribute: {}", attr.id);
+                continue;
+            }
+            AttributeInstance inst = entity.getAttribute(attribute);
             if (inst != null) {
                 try {
                     double evl = Eval.evaluate(attr.evl);
